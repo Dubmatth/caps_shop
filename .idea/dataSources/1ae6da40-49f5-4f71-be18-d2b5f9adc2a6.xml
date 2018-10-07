@@ -930,69 +930,111 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="235" parent="3" name="migration_versions">
-      <Collation>utf8_unicode_ci</Collation>
-    </table>
-    <table id="236" parent="3" name="product">
+    <table id="235" parent="3" name="category">
       <Collation>utf8mb4_unicode_ci</Collation>
     </table>
-    <column id="237" parent="235" name="version">
-      <Position>1</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="238" parent="235" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>version</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="239" parent="236" name="id">
+    <table id="236" parent="3" name="migration_versions">
+      <Collation>utf8_unicode_ci</Collation>
+    </table>
+    <table id="237" parent="3" name="product">
+      <Collation>utf8mb4_unicode_ci</Collation>
+    </table>
+    <column id="238" parent="235" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="236" name="title">
+    <column id="239" parent="235" name="title">
+      <Position>2</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="235" name="description">
+      <Position>3</Position>
+      <DataType>longtext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="241" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="242" parent="236" name="version">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="243" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="244" parent="237" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="237" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="236" name="content">
+    <column id="246" parent="237" name="content">
       <Position>3</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="236" name="created">
+    <column id="247" parent="237" name="created">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="236" name="user">
+    <column id="248" parent="237" name="user">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="236" name="image">
+    <column id="249" parent="237" name="image">
       <Position>6</Position>
       <DataType>varchar(60)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="236" name="published">
+    <column id="250" parent="237" name="published">
       <Position>7</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="246" parent="236" name="PRIMARY">
+    <column id="251" parent="237" name="category_id">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="252" parent="237" name="IDX_D34A04AD12469DE2">
+      <ColNames>category_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="253" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="254" parent="237" name="FK_D34A04AD12469DE2">
+      <ColNames>category_id</ColNames>
+      <RefSchemaName>caps_shop</RefSchemaName>
+      <RefTableName>category</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
