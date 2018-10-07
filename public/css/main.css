@@ -1,0 +1,158 @@
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    height: 75px;
+    text-transform: uppercase;
+}
+.navbar span {
+    font-size: 1em;
+}
+.navbar ul{
+    margin-left: 3em;
+}
+#navbar_left li {
+    margin: 2.4em 1em 0 0;
+}
+.navbar, .home_jumb {
+    font-family: "Brandon Grotesque", Arial;
+}
+#loginModal{
+    color: #fff;
+}
+#home_jumb {
+    background: url(../img/bg_jumb_home.jpg) no-repeat center;
+    height: 460px;
+    width: auto;
+    background-color: #020A14;
+    color: #FFF;
+    margin: 0;
+}
+#about_about{
+    padding-top: 3em;
+    min-height: 100vh;
+}
+#box_caps_index div{
+    padding: 0;
+    margin: 0;
+}
+#box_caps_index img {
+    margin-top: 4em;
+    filter: contrast(80%);
+}
+#box_caps_index img:hover {
+    filter: contrast(100%);
+}
+#index_banniere_caps{
+    margin: 5em 0;
+    filter: contrast(80%);
+}
+#index_banniere_caps:hover{
+    filter: contrast(100%);
+}
+#index_footer, #index_footer a {
+    color: #FFF;
+}
+#index_footer .fa-search {
+    position: absolute;
+    margin: 1.3em 0 0 -1.5em;
+}
+#index_footer input {
+    margin: 2em 0 0 0;
+    width: 300px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid grey;
+    caret-color: grey;
+    color: #FFF;
+}
+#index_footer input{
+    outline: none;
+}
+.index_footer_div{
+    padding: 2em 0;
+}
+.index_footer_div a,  .index_footer_div i,  .index_footer_div p{
+    margin: .5em;
+}
+.index_footer_div h2{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "Brandon Grotesque", Arial;
+    font-weight: 400;
+}
+.index_footer_div p{
+    font-size: 14px;
+    font-family: "Brandon Grotesque", Arial;
+    font-weight: 200;
+}
+.index_footer_div{
+    height: 200px;
+}
+#index_footer_div_1 :nth-of-type(1) i {
+    color: #FF6347;
+}
+#index_footer_div_1 :nth-of-type(2) i {
+    color: #FFD047;
+}
+#index_footer_div_1 :nth-of-type(3) i {
+    color: #AECC5B;
+}
+#index_footer_div_2 :nth-of-type(1) i {
+    color: #ED486F;
+}
+#index_footer_div_2 :nth-of-type(2) i {
+    color: #4D8ACE;
+}
+#index_footer_div_2 :nth-of-type(3) i {
+    color: #977DCC;
+}
+.index_footer_div div > p{
+    position: absolute;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+#index_footer_logo{
+    margin: 1em 0;
+}
+
+#footer_footer {
+    background-color: #000;
+    color: #fff;
+}
+#footer_footer > div {
+    padding: 2em;
+}
+#footer_footer > div .row > div p{
+    padding: 0;
+    margin: 0;
+}
+#footer_footer a {
+    color: #fff;
+}
+#footer_footer h3 {
+    font-size: 14px;
+}
+#footer_footer p {
+    font-size: 10px;
+}
+#cgv {
+    padding: 5em 0;
+}
+#cgv p{
+    font-size: 14px;
+}
+#cgv h2 {
+    font-size: 18px;
+}
+#cgv h3 {
+    font-size: 16px;
+}
+#legalsMentions {
+    padding: 5em 0;
+}
+
