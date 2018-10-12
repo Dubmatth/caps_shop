@@ -32,11 +32,6 @@ class Product
     private $created;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $user;
-
-    /**
      * @ORM\Column(type="string", length=60, nullable=true)
      */
     private $image;
@@ -89,18 +84,6 @@ class Product
     public function setCreated(\DateTimeInterface $created): self
     {
         $this->created = $created;
-
-        return $this;
-    }
-
-    public function getUser(): ?int
-    {
-        return $this->user;
-    }
-
-    public function setUser(int $user): self
-    {
-        $this->user = $user;
 
         return $this;
     }
