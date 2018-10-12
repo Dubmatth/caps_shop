@@ -35,9 +35,9 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         {#<button type="button" class="btn btn-sm btn-outline-secondary">View</button>#}
-                                        <a href="{{ path('details', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="{{ path('details', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Détails</a>
                                         {#FIXME Cacher button edit si pas admin/user#}
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Editer</button>
                                         {#<a href="{{ path('edit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
                                     </div>
                                     <small class="text-muted">{{ product.created|date('d-m-Y') }}</small>

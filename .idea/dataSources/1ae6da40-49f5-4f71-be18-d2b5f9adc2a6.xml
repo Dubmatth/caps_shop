@@ -1021,69 +1021,95 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="253" parent="238" name="IDX_D34A04AD12469DE2">
+    <column id="253" parent="238" name="price">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="238" name="user_id">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="255" parent="238" name="IDX_D34A04AD12469DE2">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="254" parent="238" name="PRIMARY">
+    <index id="256" parent="238" name="IDX_D34A04ADA76ED395">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="257" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="255" parent="238" name="FK_D34A04AD12469DE2">
+    <foreign-key id="258" parent="238" name="FK_D34A04AD12469DE2">
       <ColNames>category_id</ColNames>
       <RefSchemaName>caps_shop</RefSchemaName>
       <RefTableName>category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="256" parent="239" name="id">
+    <foreign-key id="259" parent="238" name="FK_D34A04ADA76ED395">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>caps_shop</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="260" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="239" name="first_name">
+    <column id="261" parent="239" name="first_name">
       <Position>2</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="239" name="last_name">
+    <column id="262" parent="239" name="last_name">
       <Position>3</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="239" name="mail">
+    <column id="263" parent="239" name="email">
       <Position>4</Position>
       <DataType>varchar(120)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="239" name="user_name">
+    <column id="264" parent="239" name="user_name">
       <Position>5</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="239" name="password">
+    <column id="265" parent="239" name="password">
       <Position>6</Position>
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="239" name="user_avatar">
+    <column id="266" parent="239" name="user_avatar">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="239" name="story">
+    <column id="267" parent="239" name="story">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="264" parent="239" name="PRIMARY">
+    <column id="268" parent="239" name="roles">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="269" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

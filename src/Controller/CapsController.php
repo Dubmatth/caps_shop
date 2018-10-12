@@ -55,6 +55,8 @@ class CapsController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
             $manager = $this->getDoctrine()->getManager();
+            /*FIXME Ajout de l'utilisateur qui est log*/
+            /* $product->setUser($this->getUser());*/
             $manager->persist($product);
             $manager->flush();
             return $this->redirectToRoute('products');

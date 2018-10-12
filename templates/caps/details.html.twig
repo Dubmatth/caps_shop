@@ -15,7 +15,8 @@
                                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                 {#<a href="{{ path('edit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
                             </div>
-                            <small class="text-muted">{{ product.created|date('d-m-Y') }}</small>
+                            {#<small class="text-muted">{{ product.created|date('d-m-Y') }}</small>#}
+                            <p class="text-success">{{ product.price }}€</p>
                         </div>
                     </div>
                 </div>

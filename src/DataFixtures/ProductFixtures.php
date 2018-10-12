@@ -26,6 +26,7 @@ class ProductFixtures extends Fixture {
                             ->setCreated($faker->dateTimeThisYear('now'))
                             ->setImage(rand(1,15).'.jpg')
                             ->setCategory($category)
+                            ->setPrice($faker->numberBetween(12, 49))
                             ->setPublished(1);
                     $manager->persist($product);
                 }
