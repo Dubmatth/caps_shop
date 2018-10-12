@@ -24,7 +24,7 @@ class SecurityController extends AbstractController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
             $manager->flush();
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('login'/* FIXME PARAMETRE POUR MODAL POPUP QUAND ENREGISTRE, ['registred' => true]*/);
         }
         return $this->render('security/registration.html.twig', ['form' => $form->createView()]);
     }

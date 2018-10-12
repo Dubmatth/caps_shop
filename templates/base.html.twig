@@ -14,7 +14,7 @@
         {% block nav %}
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
-                    <a href="{{ path('home') }}"><img src="../img/logo_headict.svg" alt="Logo casquette" id="caps_logo"></a>
+                    <a href="{{ path('home') }}"><img src="{{ asset('img/logo_headict.svg') }}" alt="Logo casquette" id="caps_logo"></a>
                     
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -34,13 +34,13 @@
                                 <a class="nav-link" href="{{ path('about') }}">A propos</a>
                             </li>
                         </ul>
-                        
                         <!-- Button trigger modal -->
                         <ul class="navbar-nav" id="navbar_right">
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user fa-3x"></i></a>
                             </li>
                         </ul>
+
                         <!-- Modal -->
                         {#FIXME Mettre en anglais le formulaire d'inscription et de connexion#}
                         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="modal-footer bg-dark">
                                         <h3 class="">Pas encore inscrit ?</h3>
-                                        <button type="button" class="btn btn-primary">Inscription</button>
+                                        <a href="{{ path('registration') }}" class="btn btn-primary">Inscription</a>
                                     </div>
                                     <div class="modal-footer bg-dark">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -163,9 +163,9 @@
             
         {% endblock %}
 
-
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
