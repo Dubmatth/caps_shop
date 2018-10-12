@@ -34,7 +34,7 @@ class User
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $login;
+    private $userName;
 
     /**
      * @ORM\Column(type="text")
@@ -92,14 +92,14 @@ class User
         return $this;
     }
 
-    public function getLogin(): ?string
+    public function getUserName(): ?string
     {
-        return $this->login;
+        return $this->userName;
     }
 
-    public function setLogin(string $login): self
+    public function setUserName(string $userName): self
     {
-        $this->login = $login;
+        $this->userName = $userName;
 
         return $this;
     }

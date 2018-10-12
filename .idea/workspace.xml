@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d98df07-8643-4f26-b1fd-946abf81937d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1ae6da40-49f5-4f71-be18-d2b5f9adc2a6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1ae6da40-49f5-4f71-be18-d2b5f9adc2a6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,20 +82,20 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="category" value="1" />
-          <entry key="env" value="5" />
+          <entry key="env" value="6" />
           <entry key="gitignore" value="1" />
           <entry key="php" value="6" />
           <entry key="product" value="5" />
           <entry key="sql" value="1" />
           <entry key="twig" value="2" />
-          <entry key="user" value="1" />
+          <entry key="user" value="2" />
           <entry key="yaml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="5" />
-          <entry key="Database Element" value="7" />
+          <entry key=".env file" value="6" />
+          <entry key="Database Element" value="8" />
           <entry key="PHP" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
@@ -106,8 +105,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="cell" value="44" />
           <entry key="env" value="9" />
-          <entry key="php" value="859" />
+          <entry key="php" value="880" />
           <entry key="txt" value="18" />
           <entry key="yaml" value="1" />
         </counts>
@@ -115,8 +115,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="9" />
-          <entry key="PHP" value="859" />
+          <entry key="PHP" value="880" />
           <entry key="PLAIN_TEXT" value="18" />
+          <entry key="Scratch" value="44" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -136,20 +137,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+            <state relative-caret-position="267">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+            <state relative-caret-position="72">
+              <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -172,6 +173,7 @@
         <option value="$PROJECT_DIR$/src/Controller/CapsController.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php" />
         <option value="$PROJECT_DIR$/src/Entity/Product.php" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
       </list>
     </option>
   </component>
@@ -380,18 +382,18 @@
       <workItem from="1539329393656" duration="1170000" />
       <workItem from="1539350864850" duration="516000" />
       <workItem from="1539351410120" duration="64000" />
-      <workItem from="1539351527474" duration="263000" />
+      <workItem from="1539351527474" duration="963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12778000" />
+    <option name="totallyTimeSpent" value="13478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11886994" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11886994" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -405,12 +407,12 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.498779" visible="true" weight="0.23084678" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.501221" side_tool="true" weight="0.23858921" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49840087" visible="true" weight="0.23084678" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50159913" side_tool="true" weight="0.23084678" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15511727" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.15511727" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,20 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://1ae6da40-49f5-4f71-be18-d2b5f9adc2a6/schema/caps_shop/table/user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/caps/index.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -494,17 +482,31 @@
     <entry file="file://$PROJECT_DIR$/templates/caps/products.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        <state relative-caret-position="406">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
+        <state relative-caret-position="267">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1ae6da40-49f5-4f71-be18-d2b5f9adc2a6/schema/caps_shop/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="93" column="4" selection-start-line="93" selection-start-column="4" selection-end-line="93" selection-end-column="4" />
         </state>
       </provider>
     </entry>
