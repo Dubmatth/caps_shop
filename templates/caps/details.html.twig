@@ -1,4 +1,28 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
+    <div class="container" id="product_detail">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" src="{{ asset("img/caps/resized/" ~ product.image) }}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{ product.title }}</p>
+                        <p class="card-text">{{ product.content }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                {#FIXME Cacher button edit si pas admin/user#}
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                {#<a href="{{ path('edit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
+                            </div>
+                            <small class="text-muted">{{ product.created|date('d-m-Y') }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock %}

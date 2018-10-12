@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="{{ asset('img/favicon-1.ico') }}"/>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon-1.ico') }}"/>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -23,7 +25,10 @@
                                 <a class="nav-link" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('products') }}">Produits</a>
+                                <a class="nav-link" href="{{ path('products') }}">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('add') }}">Ajout</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('about') }}">About</a>
@@ -37,6 +42,7 @@
                             </li>
                         </ul>
                         <!-- Modal -->
+                        {#FIXME Mettre en anglais le formulaire d'inscription et de connexion#}
                         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content bg-dark">

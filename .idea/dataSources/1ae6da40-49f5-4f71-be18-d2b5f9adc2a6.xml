@@ -952,15 +952,15 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="236" name="title">
+    <column id="241" parent="236" name="description">
       <Position>2</Position>
-      <DataType>varchar(60)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="236" name="description">
+    <column id="242" parent="236" name="category">
       <Position>3</Position>
-      <DataType>longtext|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="243" parent="236" name="PRIMARY">
@@ -1061,7 +1061,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="239" name="login">
+    <column id="260" parent="239" name="user_name">
       <Position>5</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>

@@ -19,9 +19,9 @@ class Category
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=60)
+     * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $category;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -43,14 +43,20 @@ class Category
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    /**
+     * @return mixed
+     */
+    public function getCategory(): ? string
     {
-        return $this->title;
+        return $this->category;
     }
-
-    public function setTitle(string $title): self
+    /**
+     * @param string $category
+     * @return Category
+     */
+    public function setCategory(string $category): self
     {
-        $this->title = $title;
+        $this->category = $category;
 
         return $this;
     }

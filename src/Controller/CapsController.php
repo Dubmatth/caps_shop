@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Form\ProductType;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CapsController extends AbstractController
@@ -19,8 +21,53 @@ class CapsController extends AbstractController
      * @Route("/products", name="products")
      */
     public function showProducts(){
-        return $this->render('caps/products.html.twig');
+        $products = $this->getDoctrine()
+                        ->getRepository(Product::class)
+                        ->findAll();
+        return $this->render('caps/products.html.twig', ['products' => $products]);
     }
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/products/details-{id}", name="details")
+     */
+    public function details($id){
+        $product = $this->getDoctrine()
+                        ->getRepository(Product::class)
+                        ->find($id);
+        return $this->render('caps/details.html.twig', ['product' => $product]);
+    }
+    /**
+     * @Route("products/edit-{id}", name="edit")
+     */
+    public function edit(){
+
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @Route("/products/add", name="add")
+     */
+    public function add(Request $request){
+        $product = new Product();
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($product);
+            $manager->flush();
+            return $this->redirectToRoute('products');
+        } else {
+            return $this->render('caps/addProduct.html.twig', [
+                'products' => $product,
+                'form' => $form->createView()
+            ]);
+        }
+    }
+
+
+
     /**
      * @Route("/cgv", name="cgv")
      */
