@@ -27,63 +27,85 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('products') }}">Produits</a>
                             </li>
+                            {% if is_granted('ROLE_ADMIN') %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('add') }}">Ajoutez</a>
                             </li>
+                            {% endif %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('about') }}">A propos</a>
                             </li>
                         </ul>
-                        <!-- Button trigger modal -->
-                        <ul class="navbar-nav" id="navbar_right">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ path('login') }}" {#data-toggle="modal" data-target="#loginModal"#}><i class="fas fa-user fa-2x"></i></a>
-                            </li>
-                        </ul>
 
-                        <!-- Modal -->
-                        {#FIXME Mettre en anglais le formulaire d'inscription et de connexion#}
-{#
-                        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content bg-dark">
-                                    <div class="modal-header bg-dark">
-                                        <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body bg-dark">
-                                        <form class="form-signin" action="{{ 'login' }}" method="post">
-                                            <img class="mb-4" src="{{ asset('img/logo_headict.svg') }}" alt="logo headict" width="72" height="72">
-                                            <h1 class="h3 mb-3">Déjà inscrit ?</h1>
-                                            <label for="inputEmail" class="sr-only">Adresse E-mail</label>
-                                            <input type="email" name="_username" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
-                                            <label for="inputPassword" class="sr-only">Mot de passe</label>
-                                            <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-                                            <div class="checkbox mb-3">
-                                                <label>
-                                                <input type="checkbox" value="remember-me">Souvenez-vous de moi
-                                                </label>
-                                            </div>
-                                            <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-                                            <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer bg-dark">
-                                        <h3 class="">Pas encore inscrit ?</h3>
-                                        <a href="{{ path('registration') }}" class="btn btn-primary">Inscription</a>
-                                    </div>
-                                    <div class="modal-footer bg-dark">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+                            <button class="btn btn-dark" disabled>
+                                {{ app.user.userName }}
+                            </button>
+                            <ul class="navbar-nav" id="navbar_right">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+                                </li>
+                            </ul>
+                        {% else %}
+                            <!-- Button trigger modal -->
+                            <ul class="navbar-nav" id="navbar_right">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user fa-2x"></i></a>
+                                </li>
+                            </ul>
+                            <!-- Modal -->
+                            {#FIXME Mettre en anglais le formulaire d'inscription et de connexion#}
+                            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content bg-dark">
+                                        <div class="modal-header bg-dark">
+                                            <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body bg-dark">
+                                            <form class="form-signin" action="{{ 'login' }}" method="post">
+                                                <img class="mb-4" src="{{ asset('img/logo_headict.svg') }}" alt="logo headict" width="72" height="72">
+                                                <h1 class="h3 mb-3">Déjà inscrit ?</h1>
+                                                <label for="inputEmail" class="sr-only">Adresse E-mail</label>
+                                                <input type="email" name="_username" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
+                                                <label for="inputPassword" class="sr-only">Mot de passe</label>
+                                                <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                                                <div class="checkbox mb-3">
+                                                    <label>
+                                                        <input type="checkbox" value="remember-me">Souvenez-vous de moi
+                                                    </label>
+                                                </div>
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+                                                <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer bg-dark">
+                                            <h3 class="">Pas encore inscrit ?</h3>
+                                            <a href="{{ path('registration') }}" class="btn btn-primary">Inscription</a>
+                                        </div>
+                                        <div class="modal-footer bg-dark">
+                                            <button type="button" class="btn btn-secondary close" data-dismiss="modal">Fermer</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-#}
+                        {% endif %}
+
                     </div>
                 </div>
             </nav>
+        {% endblock %}
+
+        {% block message %}
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
         {% endblock %}
 
         <div class="container-fluid">

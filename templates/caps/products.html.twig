@@ -20,6 +20,7 @@
         <div class="container">
             <div class="row">
                 {% for product in products %}
+                    {% if product.published is not empty %}
                     <div class="col-md-4" id="block_caps">
                         <div class="card mb-4 shadow-sm">
                             <a href="{{ path('details', {'id': product.id}) }}">
@@ -45,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

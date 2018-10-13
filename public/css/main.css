@@ -34,7 +34,7 @@
     min-height: 100vh;
 }
 #box_caps_index div{
-    padding: 0;
+    padding: 1em;
     margin: 0;
 }
 #box_caps_index img {
@@ -45,6 +45,7 @@
     filter: contrast(100%);
 }
 #index_banniere_caps{
+    padding: 1em;
     margin: 5em 0;
     filter: contrast(80%);
 }
@@ -192,18 +193,22 @@ footer p {
 #product_detail{
     margin: 4em auto;
 }
-
 #form_add_product{
     margin: 3em auto;
 }
-
 #block_caps .shadow-sm{
     height: 450px;
     width: auto;
 }
-
 #block_caps .shadow-sm .card-body{
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+/*ALERT*/
+.alert{
+    margin: 0 auto;
+    padding: 0 auto;
+
 }

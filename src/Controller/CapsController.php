@@ -56,9 +56,12 @@ class CapsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $manager = $this->getDoctrine()->getManager();
             /*FIXME Ajout de l'utilisateur qui est log*/
-            /* $product->setUser($this->getUser());*/
+            $product->setUser($this->getUser());
             $manager->persist($product);
             $manager->flush();
+            $this->addFlash(
+                'success', 'Vous avez ajouté un produit au catalogue !'
+            );
             return $this->redirectToRoute('products');
         } else {
             return $this->render('caps/addProduct.html.twig', [

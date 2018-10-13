@@ -1,4 +1,3 @@
-/*
 $('document').ready(function (){
 
     function getParamByName(name, url) {
@@ -7,20 +6,27 @@ $('document').ready(function (){
         let mainBody = $('body');
         let divModal = $('<div class="modal-backdrop fade show">');
 
-        if (url.search("registred=1") >= 1){
+        if (url.search("/login") >= 1){
             myModal.attr('class', 'modal fade show').css('display', 'block');
+            myModal.attr('style');
+            $('.form-signin').attr('_lpchecked', 1);
             mainBody.addClass('modal-open');
-            console.log(mainBody);
             $(mainBody).append(divModal);
             myModal.removeAttr('aria-hidden');
-            console.log(myModal);
-        } else {
-            /!*myModal.attr('aria-hidden', 'true');*!/
         }
+        /*FIXME Encore bug quand on supprime la modal, on ne peut plus la rappeler*/
+        $('.close').on('click', function(){
+            myModal.attr('class', 'modal fade').css('display', 'none');
+            divModal.removeClass();
+            $(mainBody).prepend(divModal);
+            $('.modal-dialog').css('display', 'none');
+            mainBody.removeClass('modal-open');
+            myModal.attr('aria-hidden', true);
+        })
     }
-    /!*FIXME Appeler la fonction uniquement quand enregistré terminé*!/
+    /*FIXME Appeler la fonction uniquement quand enregistré terminé*/
     getParamByName('url');
 
 
 
-});*/
+});

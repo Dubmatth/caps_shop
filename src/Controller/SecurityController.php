@@ -29,8 +29,10 @@ class SecurityController extends AbstractController
             $user->setPassword($crypt);
             $manager->persist($user);
             $manager->flush();
-            return $this->redirectToRoute('login');
-            /* FIXME PARAMETRE POUR MODAL POPUP QUAND ENREGISTRE, ['registred' => true]*/
+            $this->addFlash(
+                'success', 'Vous êtes désormais enregistré, vous pouvez vous connecter !'
+            );
+            return $this->redirectToRoute('home');
         }
         return $this->render('security/registration.html.twig', ['form' => $form->createView()]);
     }
@@ -39,12 +41,11 @@ class SecurityController extends AbstractController
      * @Route("/login", name="login")
      */
     public function login(){
-        return $this->render('security/login.html.twig');
+        return $this->render('caps/index.html.twig');
     }
     /**
      * @Route("/logout", name="logout")
      */
     public function logout(){
-
     }
 }
