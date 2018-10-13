@@ -1,3 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <form action="{{ 'login' }}" method="post">
+        <div class="row">
+            <div class="col col-8 offset-2">
+                <h2>Identification</h2>
+                <div class="form-group">
+                    <input type="email" name="_username" class="form-control" placeholder="Votre Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="_password" class="form-control" placeholder="Votre mot de passe" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Envoyer" class="form-control">
+                </div>
+            </div>
+        </div>
+    </form>
 {% endblock %}

@@ -37,12 +37,13 @@
                         <!-- Button trigger modal -->
                         <ul class="navbar-nav" id="navbar_right">
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user fa-3x"></i></a>
+                                <a class="nav-link" href="{{ path('login') }}" {#data-toggle="modal" data-target="#loginModal"#}><i class="fas fa-user fa-2x"></i></a>
                             </li>
                         </ul>
 
                         <!-- Modal -->
                         {#FIXME Mettre en anglais le formulaire d'inscription et de connexion#}
+{#
                         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content bg-dark">
@@ -53,13 +54,13 @@
                                         </button>
                                     </div>
                                     <div class="modal-body bg-dark">
-                                        <form class="form-signin">
+                                        <form class="form-signin" action="{{ 'login' }}" method="post">
                                             <img class="mb-4" src="{{ asset('img/logo_headict.svg') }}" alt="logo headict" width="72" height="72">
                                             <h1 class="h3 mb-3">Déjà inscrit ?</h1>
                                             <label for="inputEmail" class="sr-only">Adresse E-mail</label>
-                                            <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
+                                            <input type="email" name="_username" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
                                             <label for="inputPassword" class="sr-only">Mot de passe</label>
-                                            <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                                            <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
                                             <div class="checkbox mb-3">
                                                 <label>
                                                 <input type="checkbox" value="remember-me">Souvenez-vous de moi
@@ -79,6 +80,7 @@
                                 </div>
                             </div>
                         </div>
+#}
                     </div>
                 </div>
             </nav>
@@ -136,7 +138,7 @@
                         <i class="fab fa-facebook-square fa-2x"></i>
                         <i class="fab fa-twitter-square fa-2x"></i>
                         <i class="fab fa-instagram fa-2x"></i>
-                        <p><a href="#">> Le blog headict</a></p>
+                        <p><a href="{{ path('home') }}">> Le blog headict</a></p>
                     </div>
                     <div class="col-md-4 text-center">
                         <h2>Personnalisation</h2>
