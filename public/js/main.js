@@ -1,6 +1,6 @@
 $('document').ready(function (){
 
-    function getParamByName(name, url) {
+    /*function getParamByName(name, url) {
         if (!url) url = window.location.href;
         let myModal = $('.modal');
         let mainBody = $('body');
@@ -14,7 +14,7 @@ $('document').ready(function (){
             $(mainBody).append(divModal);
             myModal.removeAttr('aria-hidden');
         }
-        /*FIXME Encore bug quand on supprime la modal, on ne peut plus la rappeler*/
+        /!*FIXME Encore bug quand on supprime la modal, on ne peut plus la rappeler*!/
         $('.close').on('click', function(){
             myModal.attr('class', 'modal fade').css('display', 'none');
             divModal.removeClass();
@@ -24,9 +24,9 @@ $('document').ready(function (){
             myModal.attr('aria-hidden', true);
         })
     }
-    /*FIXME Appeler la fonction uniquement quand enregistré terminé*/
+    /!*FIXME Appeler la fonction uniquement quand enregistré terminé*!/
     getParamByName('url');
-
+*/
 
 
 });

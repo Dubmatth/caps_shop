@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Entity\User;
 use App\Form\RegistrationType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -36,6 +37,23 @@ class SecurityController extends AbstractController
         }
         return $this->render('security/registration.html.twig', ['form' => $form->createView()]);
     }
+
+    /**
+     * @Route("/admin", name="admin")
+     */
+    public function admin(){
+        return $this->render('security/admin.html.twig');
+    }
+    /**
+     * @Route("/admin/products", name="adminProducts")
+     */
+    public function adminProducts(){
+        $products = $this->getDoctrine()
+                        ->getRepository(Product::class)
+                        ->findAll();
+        return $this->render('security/adminProducts.html.twig', ['products' => $products]);
+    }
+
 
     /**
      * @Route("/login", name="login")

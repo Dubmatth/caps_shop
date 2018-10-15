@@ -36,12 +36,16 @@
                                 <a class="nav-link" href="{{ path('about') }}">A propos</a>
                             </li>
                         </ul>
-
                         {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
                             <button class="btn btn-dark" disabled>
                                 {{ app.user.userName }}
                             </button>
                             <ul class="navbar-nav" id="navbar_right">
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ path('admin') }}"><i class="fas fa-wrench fa-2x"></i></a>
+                                    </li>
+                                {% endif %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ path('logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
                                 </li>
@@ -69,19 +73,19 @@
                                                 <img class="mb-4" src="{{ asset('img/logo_headict.svg') }}" alt="logo headict" width="72" height="72">
                                                 <h1 class="h3 mb-3">Déjà inscrit ?</h1>
                                                 <label for="inputEmail" class="sr-only">Adresse E-mail</label>
-                                                <input type="email" name="_username" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus>
+                                                <input type="email" name="_username" id="inputEmail" class="form-control col-md-8 offset-2" placeholder="Adresse e-mail" required autofocus>
                                                 <label for="inputPassword" class="sr-only">Mot de passe</label>
-                                                <input type="password" name="_password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                                                <input type="password" name="_password" id="inputPassword" class="form-control col-md-8 offset-2 mb-2" placeholder="Mot de passe" required>
                                                 <div class="checkbox mb-3">
                                                     <label>
                                                         <input type="checkbox" value="remember-me">Souvenez-vous de moi
                                                     </label>
                                                 </div>
-                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+                                                <button class="btn btn-lg btn-primary btn-block col-md-8 offset-2" type="submit">Connexion</button>
                                                 <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
                                             </form>
                                         </div>
-                                        <div class="modal-footer bg-dark">
+                                        <div class="modal-footer bg-dark" id="footer_modal_inscription">
                                             <h3 class="">Pas encore inscrit ?</h3>
                                             <a href="{{ path('registration') }}" class="btn btn-primary">Inscription</a>
                                         </div>

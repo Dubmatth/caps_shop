@@ -46,6 +46,46 @@ class CapsController extends AbstractController
 
     /**
      * @param Request $request
+     * @param Product $product
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @Route("products/admin/edit-{id}", name="editProductAdmin")
+     */
+    public function editProductAdmin(Request $request, Product $product){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()
+                ->getManager();
+            $em->flush();
+            $this->addFlash(
+                'success', 'Vous avez modifié ce produit avec succès !'
+            );
+            return $this->redirectToRoute('admin');
+        } else {
+            return $this->render('security/adminProductsEdit.html.twig', [
+                'product' => $product,
+                'form' => $form->createView()
+            ]);
+        }
+    }
+
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/products/admin/delete-{id}", name="deleteProductAdmin")
+     */
+    public function deleteProductAdmin($id){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $em = $this->getDoctrine()->getManager();
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $em->remove($product);
+        $em->flush();
+        return $this->redirectToRoute('adminProducts');
+    }
+
+    /**
+     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Route("/products/add", name="add")
      */
@@ -72,7 +112,6 @@ class CapsController extends AbstractController
     }
 
 
-
     /**
      * @Route("/cgv", name="cgv")
      */
@@ -92,5 +131,4 @@ class CapsController extends AbstractController
         return $this->render('caps/about.html.twig');
     }
 
-    
 }

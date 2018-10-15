@@ -15,6 +15,12 @@
 #navbar_left li {
     margin: 2.4em 1em 0 0;
 }
+#navbar_left li a {
+    border-bottom: 2px solid transparent;
+}
+#navbar_left li a:hover {
+    border-bottom: 2px solid orange;
+}
 .navbar, .home_jumb {
     font-family: "Brandon Grotesque", Arial;
 }
@@ -212,3 +218,8 @@ footer p {
     padding: 0 auto;
 
 }
+/* FORM SIGNIN */
+#footer_modal_inscription h3{
+    margin: auto;
+}
+
