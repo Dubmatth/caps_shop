@@ -1,0 +1,41 @@
+{% extends 'security/admin.html.twig' %}
+{% block adminContent %}
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+<h2>Tableaux</h2>
+
+<a href="{{ path('registration') }}" class="btn btn-primary">Ajout d'utilisateur</a>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr class="text-center">
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Nom d'utilisateur</th>
+                <th>Avatar</th>
+                <th>Story</th>
+                <th>Roles</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr class="text-center">
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.userName }}</td>
+                <td>{{ user.userAvatar }}</td>
+                <td>{{ user.story }}</td>
+                <td>{{ user.roles[0] == 'ROLE_ADMIN' ? 'Admin' : 'Utilisateur'  }}</td>
+                <td><a href="{{ path('adminUserEdit', {'id': user.id }) }}"><i class="fas fa-edit"></i></a></td>
+                <td><a href="{{ path('adminUserDelete', {'id': user.id }) }}"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</main>
+{% endblock %}

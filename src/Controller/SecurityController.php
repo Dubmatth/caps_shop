@@ -45,17 +45,6 @@ class SecurityController extends AbstractController
         return $this->render('security/admin.html.twig');
     }
     /**
-     * @Route("/admin/products", name="adminProducts")
-     */
-    public function adminProducts(){
-        $products = $this->getDoctrine()
-                        ->getRepository(Product::class)
-                        ->findAll();
-        return $this->render('security/adminProducts.html.twig', ['products' => $products]);
-    }
-
-
-    /**
      * @Route("/login", name="login")
      */
     public function login(){

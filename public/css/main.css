@@ -35,6 +35,9 @@
     color: #FFF;
     margin: 0;
 }
+#banniere_index{
+    margin-top: 2em;
+}
 #about_about{
     padding-top: 3em;
     min-height: 100vh;
