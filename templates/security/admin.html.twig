@@ -7,30 +7,30 @@
 {% endblock %}
 {% block body %}
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="row_admin">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/">
+                            <a class="nav-link active" href="{{ path('dashboard') }}">
                                 <span data-feather="home"></span>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">
+                        <li class="nav-items">
+                            <a class="nav-link" href="#">
                                 <span data-feather="file"></span>
                                 Orders
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('adminProducts') }}">
+                            <a class="nav-link" href="{{ path('adminProduct') }}">
                                 <span data-feather="shopping-cart"></span>
                                 Products
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('adminUsers') }}">
+                            <a class="nav-link" href="{{ path('adminUser') }}">
                                 <span data-feather="users"></span>
                                 Users
                             </a>

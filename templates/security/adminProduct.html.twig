@@ -1,0 +1,65 @@
+{% extends 'security/admin.html.twig' %}
+{% block adminContent %}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <h2>Tableaux</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr class="text-center">
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Date d'ajout</th>
+                <th>Image</th>
+                <th>Prix</th>
+                <th>Ajouté par</th>
+                <th>Publication</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                <th>Editer</th>
+                <th>Supprimer</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr class="text-center">
+                    <td>{{ product.title|length > 5 ? product.title|slice(0,5) ~ '...' : product.title }}</td>
+                    <td>{{ product.content|slice(0,50) ~ '...' }}</td>
+                    <td>{{ product.created | date('d-m-Y') }}</td>
+                    <td><img src="{{ asset('img/caps/' ~ product.image) }}" alt="" style="height: 30px;width: auto;"></td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.user.userName }}</td>
+                    <td>{{ product.published == '1' ? 'Oui' : 'Non' }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <td><a href="{{ path('adminProductEdit', {'id': product.id }) }}"><i class="fas fa-edit" ></i></a></td>
+                    <td><a href="" class="{{ product.id }}" data-toggle="modal" data-target="#exampleModal-{{ product.id }}"><i class="fas fa-trash-alt"></i></a></td>
+                    {% endif %}
+                </tr>
+                {#MODAL#}
+                <div class="modal" id="exampleModal-{{ product.id }}">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Suppression</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Vous êtes sur le point de supprimé l'article suivant : </p>
+                                    <h3>{{ product.title }}</h3>
+                                    <img src="{{ asset('img/caps/' ~ product.image) }}" style="height: 60px;width: auto;" alt="{{ product.title }}">
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{{ path('adminProductDelete', {'id': product.id }) }}" class="btn btn-primary btn_confirm_product_delete">Confirmer</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </main>
+{% endblock %}

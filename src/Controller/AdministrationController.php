@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Entity\User;
+use App\Form\AdminEditUserType;
 use App\Form\ProductType;
 use App\Form\RegistrationType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AdministrationController extends AbstractController
 {
@@ -22,20 +24,26 @@ class AdministrationController extends AbstractController
         ]);
     }
     /**
-     * @Route("/admin/products", name="adminProducts")
+     * @Route("/admin/dashboard", name="dashboard")
+     */
+    public function dashboard(){
+        return $this->render('security/dashboard.html.twig');
+    }
+    /**
+     * @Route("/admin/products", name="adminProduct")
      */
     public function adminProducts(){
         $products = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findAll();
-        return $this->render('security/adminProducts.html.twig', ['products' => $products]);
+        return $this->render('security/adminProduct.html.twig', ['products' => $products]);
     }
 
     /**
      * @param Request $request
      * @param Product $product
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
-     * @Route("products/admin/edit-{id}", name="editProductAdmin")
+     * @Route("admin/products/edit-{id}", name="adminProductEdit")
      */
     public function editProductAdmin(Request $request, Product $product){
         $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
@@ -48,9 +56,9 @@ class AdministrationController extends AbstractController
             $this->addFlash(
                 'success', 'Vous avez modifié ce produit avec succès !'
             );
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('adminProduct');
         } else {
-            return $this->render('security/adminProductsEdit.html.twig', [
+            return $this->render('security/adminProductEdit.html.twig', [
                 'product' => $product,
                 'form' => $form->createView()
             ]);
@@ -59,7 +67,7 @@ class AdministrationController extends AbstractController
     /**
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     * @Route("/products/admin/delete-{id}", name="deleteProductAdmin")
+     * @Route("/admin/products/delete-{id}", name="adminProductDelete")
      */
     public function deleteProductAdmin($id){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -67,12 +75,15 @@ class AdministrationController extends AbstractController
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
         $em->remove($product);
         $em->flush();
-        return $this->redirectToRoute('adminProducts');
+        $this->addFlash(
+            'danger', 'Vous avez supprimé cet article avec succès !'
+        );
+        return $this->redirectToRoute('adminProduct');
     }
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/admin/users", name="adminUsers")
+     * @Route("/admin/users", name="adminUser")
      */
     public function adminUser(){
         $users = $this->getDoctrine()
@@ -83,18 +94,22 @@ class AdministrationController extends AbstractController
         ]);
 
     }
+
     /**
      * @param Request $request
      * @param User $user
+     * @param UserPasswordEncoderInterface $encoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Route("/admin/users/edit-{id}", name="adminUserEdit")
      */
-    public function editUserAdmin(Request $request, User $user){
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
-        $form = $this->createForm(RegistrationType::class, $user);
+    public function editUserAdmin(Request $request, User $user, UserPasswordEncoderInterface $encoder){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $form = $this->createForm(AdminEditUserType::class, $user);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
+            $crypt = $encoder->encodePassword($user, $user->getPassword());
+            $user->setPassword($crypt);
             $em->flush();
             $this->addFlash(
                 'success', 'Vous avez modifié cet utilisateur avec succès !'
@@ -119,7 +134,10 @@ class AdministrationController extends AbstractController
         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
         $em->remove($user);
         $em->flush();
-        return $this->redirectToRoute('adminUsers');
+        $this->addFlash(
+            'danger', 'Vous avez supprimé cet utilisateur avec succès !'
+        );
+        return $this->redirectToRoute('adminUser');
     }
 
 

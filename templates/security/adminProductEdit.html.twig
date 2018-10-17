@@ -3,10 +3,10 @@
 <div class="col-md-9 text-left" id="form_add_product">
     {{ form(form) }}
     <div>
-        <a href="{{ path('adminProducts') }}" class="btn btn-info">Retour</a>
+        <a href="{{ path('adminProduct') }}" class="btn btn-info">Retour</a>
     </div>
     <div class="text-right">
-        <a href="{{ path('deleteProductAdmin', {'id': product.id }) }}" class="btn btn-danger" id="adminSupProduct">Supprimer</a>
+        <a href="{{ path('adminProductDelete', {'id': product.id }) }}" class="btn btn-danger" id="adminSupProduct">Supprimer</a>
     </div>
     <div class="modal hide fade" id="confirmModal">
         <div class="modal-header">
