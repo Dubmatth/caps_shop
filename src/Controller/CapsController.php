@@ -70,8 +70,6 @@ class CapsController extends AbstractController
             ]);
         }
     }
-
-
     /**
      * @Route("/cgv", name="cgv")
      */
@@ -90,5 +88,4 @@ class CapsController extends AbstractController
     public function about(){
         return $this->render('caps/about.html.twig');
     }
-
 }

@@ -6,9 +6,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(
+ *     fields={"email"},
+ *     message="Cet email est déjà utilisé"
+ * )
+ * @UniqueEntity(
+ *     fields={"userName"},
+ *     message="Ce nom d'utilisateur est déjà utilisé"
+ * )
  */
 class User implements UserInterface
 {
@@ -41,8 +51,21 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *     min = 8,
+     *     minMessage = "Le mot de passe doit contenir au moins 8 caractères"
+     * )
      */
     private $password;
+
+    /**
+     * @var
+     * @Assert\EqualTo(
+     *     propertyPath = "password",
+     *     message = "Les mots de passes doivent-être identique"
+     * )
+     */
+    private $confirmPassword;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -63,8 +86,6 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="user")
      */
     private $products;
-
-    private $confirmPassword;
 
     public function __construct()
     {

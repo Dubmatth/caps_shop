@@ -20,7 +20,7 @@ class RegistrationType extends AbstractType
             ->add('lastName', TextType::class, ['label' => 'Votre nom'])
             ->add('email', EmailType::class, ['label' => 'Votre email'])
             ->add('userName', TextType::class, ['label' => 'Nom d\'utilisateur'])
-            ->add('password', TextType::class, ['label' => 'Mot de passe'])
+            ->add('password', PasswordType::class, ['label' => 'Mot de passe'])
             ->add('confirmPassword', PasswordType::class, ['label' => 'Confirmer votre mot de passe'])
             ->add('Envoyer', SubmitType::class)
 

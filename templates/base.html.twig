@@ -43,11 +43,14 @@
                             <ul class="navbar-nav" id="navbar_right">
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ path('dashboard') }}"><i class="fas fa-wrench fa-2x"></i></a>
+                                        <a class="nav-link" href="{{ path('dashboard') }}"><i class="fas fa-wrench"></i></a>
                                     </li>
                                 {% endif %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('logout') }}"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+                                    <a href="{{ path('panier') }}" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('logout') }}"><i class="fas fa-sign-out-alt"></i></a>
                                 </li>
                             </ul>
                         {% else %}
@@ -58,7 +61,6 @@
                                 </li>
                             </ul>
                             <!-- Modal -->
-                            {#FIXME Mettre en anglais le formulaire d'inscription et de connexion#}
                             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content bg-dark">

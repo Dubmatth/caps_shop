@@ -35,11 +35,12 @@
                                     <div class="btn-group">
                                         {#<button type="button" class="btn btn-sm btn-outline-secondary">View</button>#}
                                         <a href="{{ path('details', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Détails</a>
-                                        {#FIXME Cacher button edit si pas admin/user#}
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Editer</button>
-                                        {#<a href="{{ path('edit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
+                                        <a href="{{ path('addPanier', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-shopping-cart"></i></a>
                                     </div>
                                     <small class="text-muted">{{ product.created|date('d-m-Y') }}</small>
+                                    {% if is_granted(['ROLE_ADMIN']) %}
+                                        <a href="{{ path('adminProductEdit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Editer</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>

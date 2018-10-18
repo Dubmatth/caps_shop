@@ -8,19 +8,6 @@
     <div class="text-right">
         <a href="{{ product.id }}" class="btn btn-danger" data-toggle="modal" data-target="#productEditModal-{{ product.id }}">Supprimer</a>
     </div>
-    {#<div class="modal hide fade" id="confirmModal">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Confirmation de la suppression</h3>
-        </div>
-        <div class="modal-body">
-            <p>Etes-vous sûr de vouloir supprimer cet élément ?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="btn" id="confirmModalNo">Non</a>
-            <a href="#" class="btn btn-primary" id="confirmModalYes">Oui</a>
-        </div>
-    </div>#}
     {#MODAL#}
     <div class="modal" id="productEditModal-{{ product.id }}">
         <div class="modal-dialog" role="document">
