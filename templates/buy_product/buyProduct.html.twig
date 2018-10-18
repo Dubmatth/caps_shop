@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>Votre Panier</h1>
-    <main role="main" class="col-md-8 offset-2">
+    <div class="container mt-4 mb-4">
+    {% if app.session.get('panier') is empty %}
+    <h1>Votre panier est vide : </h1>
+    {% else %}
+    <h1>Votre panier contient : </h1>
+    {% endif %}
+    <main role="main" class="col-md-12">
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
+                    <th>Image</th>
                     <th>Titre</th>
                     <th>Quantité</th>
                     <th>Prix unitaire</th>
@@ -16,19 +22,25 @@
             {% if app.session.get('panier') is not empty %}
                 {% for product in app.session.get('panier') %}
                     <tr>
+                        <td><img src="{{ asset('img/caps/')~product.image }}" alt="{{ product.title }}" style="height: 30px;width:auto;"></td>
                         <td>{{ product.title }}</td>
                         <td>1</td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.price }}</td>
+                        <td>€{{ product.price }}.-</td>
+                        <td>€{{ product.price }}.-</td>
                     </tr>
                 {% endfor %}
             {% endif %}
             </tbody>
         </table>
     </div>
-        <a href="{{ path('products') }}" class="btn btn-info">Retour</a>
-        <a href="{{ path('clearPanier') }}" class="btn btn-danger">Vider le panier</a>
-
     </main>
-    
+        <div class="container">
+            <div class="text-right">
+                <a href="{{ path('products') }}" class="btn btn-success">Continuer vos achats</a>
+                <a href="{{ path('clearPanier') }}" class="btn btn-info">Vider le panier</a>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
