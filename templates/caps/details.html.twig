@@ -13,11 +13,12 @@
                         <p class="card-text">{{ product.content }}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                {#FIXME Cacher button edit si pas admin/user#}
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Editer</button>
-                                {#<a href="{{ path('edit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('adminProductEdit', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Editer</a>
+                                {% endif %}
+                                <a href="{{ path('addPanier', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">Acheter</a>
                             </div>
-                            {#<small class="text-muted">{{ product.created|date('d-m-Y') }}</small>#}
+                            {#FIXME Fonctionnalité promotion#}
                             <p class="text-success">{{ product.price }}€</p>
                         </div>
                     </div>

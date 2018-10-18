@@ -40,7 +40,7 @@ class BuyProductController extends AbstractController
     }
 
     /**
-     * @Route("clearPanier", name="clearPanier")
+     * @Route("/clearPanier", name="clearPanier")
      */
     public function clearPanier(){
         $session = new Session();
