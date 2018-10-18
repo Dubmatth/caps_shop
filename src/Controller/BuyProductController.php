@@ -35,7 +35,9 @@ class BuyProductController extends AbstractController
         $panier[$id] = $product;
 
         $session->set('panier', $panier);
-
+        $this->addFlash(
+            'success', 'Vous avez ajouté ce produit avec succès !'
+        );
         return $this->render('buy_product/buyProduct.html.twig');
     }
 
@@ -45,6 +47,9 @@ class BuyProductController extends AbstractController
     public function clearPanier(){
         $session = new Session();
         $session->remove('panier');
+        $this->addFlash(
+            'danger', 'Vous avez vider votre panier !'
+        );
         return $this->render('buy_product/buyProduct.html.twig');
     }
 }
