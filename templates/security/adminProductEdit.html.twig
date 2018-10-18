@@ -6,9 +6,9 @@
         <a href="{{ path('adminProduct') }}" class="btn btn-info">Retour</a>
     </div>
     <div class="text-right">
-        <a href="{{ path('adminProductDelete', {'id': product.id }) }}" class="btn btn-danger" id="adminSupProduct">Supprimer</a>
+        <a href="{{ product.id }}" class="btn btn-danger" data-toggle="modal" data-target="#productEditModal-{{ product.id }}">Supprimer</a>
     </div>
-    <div class="modal hide fade" id="confirmModal">
+    {#<div class="modal hide fade" id="confirmModal">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h3>Confirmation de la suppression</h3>
@@ -19,6 +19,28 @@
         <div class="modal-footer">
             <a href="#" class="btn" id="confirmModalNo">Non</a>
             <a href="#" class="btn btn-primary" id="confirmModalYes">Oui</a>
+        </div>
+    </div>#}
+    {#MODAL#}
+    <div class="modal" id="productEditModal-{{ product.id }}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Suppression</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Vous êtes sur le point de supprimé l'article suivant : </p>
+                    <h3>{{ product.title }}</h3>
+                    <img src="{{ asset('img/caps/' ~ product.image) }}" style="height: 60px;width: auto;" alt="{{ product.title }}">
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ path('adminProductDelete', {'id': product.id }) }}" class="btn btn-primary btn_confirm_product_delete">Confirmer</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

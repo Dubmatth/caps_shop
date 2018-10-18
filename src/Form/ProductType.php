@@ -45,7 +45,7 @@ class ProductType extends AbstractType
                     'Non' => 0
                 ]
             ])
-            ->add('submit', SubmitType::class)
+            ->add('Envoyer', SubmitType::class)
         ;
     }
 

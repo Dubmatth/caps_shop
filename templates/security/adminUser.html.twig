@@ -30,10 +30,10 @@
                 <td>{{ user.story }}</td>
                 <td>{{ user.roles[0] == 'ROLE_ADMIN' ? 'Admin' : 'Utilisateur'  }}</td>
                 <td><a href="{{ path('adminUserEdit', {'id': user.id }) }}"><i class="fas fa-edit"></i></a></td>
-                <td><a href="#" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt"></i></a></td>
+                <td><a href="#" data-toggle="modal" data-target="#exampleModal-{{ user.id }}"><i class="fas fa-trash-alt"></i></a></td>
             </tr>
             {#MODAL#}
-            <div class="modal" id="exampleModal">
+            <div class="modal" id="exampleModal-{{ user.id }}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">

@@ -31,11 +31,11 @@
                     <td>{{ product.published == '1' ? 'Oui' : 'Non' }}</td>
                     {% if is_granted('ROLE_ADMIN') %}
                     <td><a href="{{ path('adminProductEdit', {'id': product.id }) }}"><i class="fas fa-edit" ></i></a></td>
-                    <td><a href="" class="{{ product.id }}" data-toggle="modal" data-target="#exampleModal-{{ product.id }}"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="" class="{{ product.id }}" data-toggle="modal" data-target="#productModal-{{ product.id }}"><i class="fas fa-trash-alt"></i></a></td>
                     {% endif %}
                 </tr>
                 {#MODAL#}
-                <div class="modal" id="exampleModal-{{ product.id }}">
+                <div class="modal" id="productModal-{{ product.id }}">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
