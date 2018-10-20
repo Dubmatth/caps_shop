@@ -11,22 +11,27 @@
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
+                    <th>Image</th>
                     <th>Titre</th>
                     <th>Quantité</th>
                     <th>Prix unitaire HTVA</th>
                     <th>TVA</th>
                     <th>Total TVAC</th>
+                    <th>Supprimer</th>
                 </tr>
             </thead>
             <tbody>
             {% if app.session.get('panier') is not empty %}
+                {{ dump(app.session.get('panier')) }}
                 {% for product in app.session.get('panier').toArray()['items'] %}
                     <tr>
+                        <td><img src=" {{ asset('img/caps/' ~ product['data']['image'] )}}" alt="{{ product['data']['name'] }}" style="width: 40px; height: auto;"></td>
                         <td>{{ product['data']['name'] }}</td>
                         <td>{{ product['data']['quantity'] }}</td>
                         <td>€{{ product['data']['price'] }}.-</td>
                         <td>€{{ product['data']['tax'] }}.-</td>
-                        <td>€{{ totalPrice }}.-</td>
+                        <td>€{{ (product['data']['price'] + product['data']['tax']) * product['data']['quantity'] }}.-</td>
+                        <td><a href="{{ path('panierDel', {'id': product.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 {% endfor %}
             {% endif %}
@@ -35,8 +40,22 @@
     </div>
     </main>
         <div class="container">
-            <div class="text-right">
+            <div class="text-left">
+                {% if app.session.get('panier') is not empty %}
                 <a href="{{ path('products') }}" class="btn btn-success">Continuer vos achats</a>
+                {% elseif app.session.get('panier') == null %}
+                <a href="{{ path('products') }}" class="btn btn-success">Retour aux produits</a>
+                {% endif %}
+                <a href="{{ path('products') }}" class="btn btn-success">Valider et payer</a>
+
+            </div>
+            <div class="text-right">
+
+                    <p>Total TVAC : €
+                        {% if app.session.get('panier') is not empty%}
+                        {{ app.session.get('panier').total() }}
+                        {% endif %}
+                    .-</p>
                 <a href="{{ path('clearPanier') }}" class="btn btn-info">Vider le panier</a>
             </div>
         </div>

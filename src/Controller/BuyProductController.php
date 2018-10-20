@@ -20,7 +20,16 @@ class BuyProductController extends AbstractController
      */
     public function index(){
         $session = new Session();
-        $session->get('panier');
+        $panier = $session->get('panier');
+
+        //Verifie si le panier contient quelque chose pour affichage btn retour produit//continuer achat
+        if (isset($panier)){
+            $panier = $session->get('panier')->toArray()['items'];
+            if (count($panier) < 1){
+                $session->remove('panier');
+            }
+        }
+
 
         return $this->render('buy_product/buyProduct.html.twig');
     }
@@ -41,19 +50,24 @@ class BuyProductController extends AbstractController
         $panier = $session->get('panier');
         $item = new CartItem();
         $item->name = $product->getTitle();
+        $item->image = $product->getImage();
         $item->price = $product->getPrice();
         $item->tax = $item->price * 0.21;
         $totalPrice = $item->getTotalPrice();
         $panier->add($item);
+        $this->addFlash(
+            'success', 'Vous avez ajouté un article dans votre panier !'
+        );
         return $this->render('buy_product/buyProduct.html.twig', [
             'products' => $product,
-            'totalPrice' => $totalPrice
+            'totalPrice' => $totalPrice,
+            'panier' => $panier
         ]);
 
     }
 
     /**
-     * @Route("/cart/delete/{id}", name="cart_delete")
+     * @Route("/panier/delete/{id}", name="panierDel")
      * @param SessionInterface $session
      * @param $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
@@ -63,31 +77,40 @@ class BuyProductController extends AbstractController
         $panier = $session->get('panier')->toArray()['items'];
         foreach ($panier as $item)
         {
-            if  ($item['id'] == $id)
-            {
-                if ($item['data']['quantity'] == 1)
-                {
+            if  ($item['id'] == $id){
+                if ($item['data']['quantity'] == 1){
                     $session->get('panier')->remove($id);
-                }
-                else
-                {
-                    $session->get('panier')->update($id, 'quantity', $item['data']['quantity']-=1 );
+                }else {
+                    $session->get('panier')->update($id, 'quantity', $item['data']['quantity'] -= 1 );
                 }
             }
         }
-        return $this->redirectToRoute('cart');
+
+        $this->addFlash(
+            'danger', 'Vous avez enlevé un article de votre panier !'
+        );
+        return $this->redirectToRoute('panier');
     }
-
-
     /**
      * @Route("/clearPanier", name="clearPanier")
      */
     public function clearPanier(){
         $session = new Session();
+        $panier = $session->get('panier');
+
+        // Test si panier à déjà été vidé une fois
+        if (!$panier == null){
+            $this->addFlash(
+                'danger', 'Vous avez vidé votre panier !'
+            );
+        } else {
+            $this->addFlash(
+                'danger', 'Votre panier à déjà été vidé !'
+            );
+        }
+
         $session->remove('panier');
-        $this->addFlash(
-            'danger', 'Vous avez vider votre panier !'
-        );
-        return $this->render('buy_product/buyProduct.html.twig');
+
+        return $this->redirectToRoute('panier');
     }
 }

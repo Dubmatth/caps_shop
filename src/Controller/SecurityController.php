@@ -49,15 +49,17 @@ class SecurityController extends AbstractController
      * @Route("/login", name="login")
      */
     public function login(){
-        /*FIXME addflash if login didnt work*/
-        $this->addFlash(
-            'success', 'Vous êtes désormais connecté !'
-        );
+            $this->addFlash(
+                'danger', 'Le nom d\'utilisateur ou le mot de passe sont incorrect !'
+            );
         return $this->render('caps/index.html.twig');
     }
     /**
      * @Route("/logout", name="logout")
      */
     public function logout(){
+        $this->addFlash(
+            'danger', 'Vous êtes déconnecté !'
+        );
     }
 }
