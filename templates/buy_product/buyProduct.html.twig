@@ -11,22 +11,22 @@
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
-                    <th>Image</th>
                     <th>Titre</th>
                     <th>Quantité</th>
-                    <th>Prix unitaire</th>
-                    <th>Total HT</th>
+                    <th>Prix unitaire HTVA</th>
+                    <th>TVA</th>
+                    <th>Total TVAC</th>
                 </tr>
             </thead>
             <tbody>
             {% if app.session.get('panier') is not empty %}
-                {% for product in app.session.get('panier') %}
+                {% for product in app.session.get('panier').toArray()['items'] %}
                     <tr>
-                        <td><img src="{{ asset('img/caps/')~product.image }}" alt="{{ product.title }}" style="height: 30px;width:auto;"></td>
-                        <td>{{ product.title }}</td>
-                        <td>1</td>
-                        <td>€{{ product.price }}.-</td>
-                        <td>€{{ product.price }}.-</td>
+                        <td>{{ product['data']['name'] }}</td>
+                        <td>{{ product['data']['quantity'] }}</td>
+                        <td>€{{ product['data']['price'] }}.-</td>
+                        <td>€{{ product['data']['tax'] }}.-</td>
+                        <td>€{{ totalPrice }}.-</td>
                     </tr>
                 {% endfor %}
             {% endif %}

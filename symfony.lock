@@ -104,6 +104,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "mike182uk/cart": {
+        "version": "v3.0.0"
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
