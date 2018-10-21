@@ -62,4 +62,41 @@ class SecurityController extends AbstractController
             'danger', 'Vous êtes déconnecté !'
         );
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/paiement", name="payments")
+     */
+    public function payment(){
+        return $this->render('security/payments.html.twig');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/paiement-verifie", name="verifiedPayment")
+     */
+    public function verifiedPayment(Request $request){
+        $session = new Session();
+        $panierTotal = $session->get('panier')->total() * 100;
+
+
+        // Set your secret key: remember to change this to your live secret key in production
+        // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey("sk_test_nZ9Y47e2xHwD5iAlmAen1Pmz");
+        // Token is created using Checkout or Elements!
+        // Get the payment token ID submitted by the form:
+        $token = $request->request->get('stripeToken');
+        $charge = \Stripe\Charge::create([
+            'amount' => $panierTotal,
+            'currency' => 'eur',
+            'description' => 'Example charge',
+            'source' => $token,
+        ]);
+        $session->remove('panier');
+        $this->addFlash('success', 'Merci, le paiement à bien été effectué, vous recevrez un email de confirmation dans les prochaines minutes ... ');
+
+        return $this->render('buy_product/buyProduct.html.twig');
+
+    }
 }

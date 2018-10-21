@@ -114,12 +114,13 @@
             {% endfor %}
         {% endblock %}
 
-        <div class="container-fluid">
-        {% block body %}{% endblock %}
+        <div class="container-fluid" id="main_content">
+        {% block body %}
+        {% endblock %}
         </div>
 
-        {% block footer %}        
-        <footer class="bg-dark">
+        {% block footer %}
+            <footer class="bg-dark">
             <div class="container" id="index_footer">
                 <div class="row">
                     <div class="mx-auto">
@@ -196,6 +197,7 @@
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
+        <script src="https://js.stripe.com/v3/"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

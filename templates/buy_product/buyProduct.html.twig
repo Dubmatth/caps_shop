@@ -22,7 +22,6 @@
             </thead>
             <tbody>
             {% if app.session.get('panier') is not empty %}
-                {{ dump(app.session.get('panier')) }}
                 {% for product in app.session.get('panier').toArray()['items'] %}
                     <tr>
                         <td><img src=" {{ asset('img/caps/' ~ product['data']['image'] )}}" alt="{{ product['data']['name'] }}" style="width: 40px; height: auto;"></td>
@@ -43,10 +42,10 @@
             <div class="text-left">
                 {% if app.session.get('panier') is not empty %}
                 <a href="{{ path('products') }}" class="btn btn-success">Continuer vos achats</a>
+                <a href="{{ path('payments') }}" class="btn btn-success">Valider et payer</a>
                 {% elseif app.session.get('panier') == null %}
                 <a href="{{ path('products') }}" class="btn btn-success">Retour aux produits</a>
                 {% endif %}
-                <a href="{{ path('products') }}" class="btn btn-success">Valider et payer</a>
 
             </div>
             <div class="text-right">

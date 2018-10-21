@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e08c0470d1c7a37317ebddc557af86b4",
+    "content-hash": "a81d800a72c1ca671cd0892b2a6100f8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2029,6 +2029,61 @@
                 "controllers"
             ],
             "time": "2018-09-30T05:16:57+00:00"
+        },
+        {
+            "name": "stripe/stripe-php",
+            "version": "v6.19.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stripe/stripe-php.git",
+                "reference": "1ab5c54fae4c16e9cc47d60c7454e6c3b6bbcb85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/1ab5c54fae4c16e9cc47d60c7454e6c3b6bbcb85",
+                "reference": "1ab5c54fae4c16e9cc47d60c7454e6c3b6bbcb85",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "1.*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Stripe\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stripe and contributors",
+                    "homepage": "https://github.com/stripe/stripe-php/contributors"
+                }
+            ],
+            "description": "Stripe PHP Library",
+            "homepage": "https://stripe.com/",
+            "keywords": [
+                "api",
+                "payment processing",
+                "stripe"
+            ],
+            "time": "2018-10-17T14:58:41+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

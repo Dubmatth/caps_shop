@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+#main_content{
+    min-height: calc((100vh - 732px) - 75px);
+}
 .navbar {
     height: 75px;
     text-transform: uppercase;
@@ -127,7 +130,7 @@
     right: 0;
 }
 #index_footer_logo{
-    margin: 1em 0;
+    margin: 2em 0;
 }
 #footer_footer {
     background-color: #000;
@@ -190,9 +193,6 @@
 .jumbotron .container {
     max-width: 40rem;
 }
-footer {
-    padding-top: 3rem;
-}
 footer p {
     margin-bottom: .25rem;
 }
@@ -234,5 +234,32 @@ footer p {
 /*Connect, panier, logout*/
 .navbar-nav .fas {
     color: orange;
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+    background-color: white;
+    height: 40px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
 }
 
