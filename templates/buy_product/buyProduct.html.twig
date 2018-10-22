@@ -33,6 +33,7 @@
                         <td><a href="{{ path('panierDel', {'id': product.id}) }}"><i class="fas fa-trash-alt"></i></a></td>
                     </tr>
                 {% endfor %}
+
             {% endif %}
             </tbody>
         </table>
@@ -42,7 +43,7 @@
             <div class="text-left">
                 {% if app.session.get('panier') is not empty %}
                 <a href="{{ path('products') }}" class="btn btn-success">Continuer vos achats</a>
-                <a href="{{ path('payments') }}" class="btn btn-success">Valider et payer</a>
+                <a href="{{ path('payments') }}" class="btn btn-success">Acheter</a>
                 {% elseif app.session.get('panier') == null %}
                 <a href="{{ path('products') }}" class="btn btn-success">Retour aux produits</a>
                 {% endif %}

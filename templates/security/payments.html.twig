@@ -1,31 +1,90 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+{% endblock %}
 {% block body %}
-<div class="container-fluid">
-    <form action="{{ path('verifiedPayment') }}" method="post" id="payment-form" style="margin: 5rem;">
-        <div class="form-row">
-            <label for="card-element">
-                Credit or debit card
-            </label>
-            <div id="card-element" class="form-control">
-                <!-- A Stripe Element will be inserted here. -->
+    {#<div class="container-fluid">
+        <form action="{{ path('verifiedPayment') }}" method="post" id="payment-form" style="margin: 5rem;">
+            <div class="">
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element" class="form-control">
+                </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
             </div>
 
-            <!-- Used to display form errors. -->
-            <div id="card-errors" role="alert"></div>
+            <button>Submit Payment</button>
+        </form>
+    </div>#}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3 mt-5 mb-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h4><span id="card_type"></span>Paiement</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form action="{{ path('verifiedPayment') }}" method="post" id="payment-form">
+                            <div class="payment-errors"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Nom du titulaire de la carte</label>
+                                        <input class="form-control input-lg" id="name" type="text" data-stripe="name" placeholder="Patrick Marthus">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Numéro de la carte</label>
+                                        <input class="form-control input-lg" id="number" type="tel" size="20" data-stripe="number" placeholder="4242 4242 4242 4242">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <label>Date d'expiration</label>
+                                        <input class="form-control input-lg" id="cc_exp" type="tel" size="2" data-stripe="exp" placeholder="MM / YY">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label>CVC</label>
+                                        <input class="form-control input-lg" id="cvc" type="tel" size="4" data-stripe="cvc" placeholder="555" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-lg btn-block btn-success submit" type="submit">Acheter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <button>Submit Payment</button>
-    </form>
-</div>
-
+        <!-- Better Bootstrap payment form ends here -->
+    </div>
+    <!-- Use Jquery in this example -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Stripe.js to collect payment details -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <!-- Jquery payment library for nicer formatting -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.4.1/jquery.payment.js"></script>
 {% endblock %}
 {% block javascripts %}
-    <script>
+    {#<script>
         // Create a Stripe client.
         var stripe = Stripe('pk_test_eNgX8DOxVTZl9f95BP18Ljuk');
         // Create an instance of Elements.
         var elements = stripe.elements();
-
         // Custom styling can be passed to options when creating an Element.
         // (Note that this demo uses a wider set of styles than the guide below.)
         var style = {
@@ -44,13 +103,10 @@
                 iconColor: '#fa755a'
             }
         };
-
         // Create an instance of the card Element.
         var card = elements.create('card', {style: style});
-
         // Add an instance of the card Element into the `card-element` <div>.
         card.mount('#card-element');
-
         card.addEventListener('change', function(event) {
             var displayError = document.getElementById('card-errors');
             if (event.error) {
@@ -59,12 +115,10 @@
                 displayError.textContent = '';
             }
         });
-
         // Create a token or display an error when the form is submitted.
         var form = document.getElementById('payment-form');
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-
             stripe.createToken(card).then(function(result) {
                 if (result.error) {
                     // Inform the customer that there was an error.
@@ -76,7 +130,6 @@
                 }
             });
         });
-
         function stripeTokenHandler(token) {
             // Insert the token ID into the form so it gets submitted to the server
             var form = document.getElementById('payment-form');
@@ -85,9 +138,63 @@
             hiddenInput.setAttribute('name', 'stripeToken');
             hiddenInput.setAttribute('value', token.id);
             form.appendChild(hiddenInput);
-
             // Submit the form
             form.submit();
+        }
+    </script>#}
+    <script>
+        // Set your Stripe publishable API key here
+        Stripe.setPublishableKey('pk_test_eNgX8DOxVTZl9f95BP18Ljuk');
+        $(function() {
+            var $form = $('#payment-form');
+            $form.submit(function(event) {
+                // Clear any errors
+                $form.find('.has-error').removeClass('has-error')
+                // Validate the form isn't empty before requesting a token
+                invalidForm = false;
+                $('#payment-form input').each(function() {
+                    if ($(this).val() == '') {
+                        $('#'+this.id).parent('.form-group').addClass('has-error');
+                        invalidForm = true;
+                    }
+                });
+                if (invalidForm){
+                    return false;
+                }
+                // Disable the submit button to prevent repeated clicks:
+                $form.find('.submit').prop('disabled', true).html("<i class='fa fa-spinner fa-spin'></i> Paiement en cours ...");
+                // Request a token from Stripe:
+                Stripe.card.createToken($form, stripeResponseHandler);
+
+                // Prevent the form from being submitted:
+                return false;
+            });
+            // Formatting
+            $('#number').payment('formatCardNumber');
+            $('#cc_exp').payment('formatCardExpiry');
+            // Determine & display the card brand
+            $('#number').keyup(function() {
+                card_type = $.payment.cardType($('#number').val());
+                card_type ? $('#card_type').html("<i class='text-success fa fa-cc-"+card_type+"'></i>") : $('#card_type').html("");
+            });
+        });
+        function stripeResponseHandler(status, response) {
+            var $form = $('#payment-form');
+            if (response.error) {
+                // Show the errors on the form
+                $form.find('.payment-errors').text(response.error.message).addClass('alert alert-danger');
+                $form.find('#' + response.error.param).parent('.form-group').addClass('has-error');
+                $form.find('button').prop('disabled', false).text('Payez'); // Re-enable submission
+            }
+            else { // Token was created!
+                $form.find('.submit').html("<i class='fa fa-check'></i> Paiement accepté");
+                // Get the token ID:
+                var token = response.id;
+                // Insert the token and name into the form so it gets submitted to the server:
+                $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+                // Submit the form:
+                $form.get(0).submit();
+            }
         }
     </script>
 {% endblock %}

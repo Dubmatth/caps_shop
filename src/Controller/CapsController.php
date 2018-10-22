@@ -7,6 +7,7 @@ use App\Form\ProductType;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CapsController extends AbstractController
@@ -15,7 +16,11 @@ class CapsController extends AbstractController
      * @Route("/", name="home")
      */
     public function index(){
-        return $this->render('caps/index.html.twig');
+        $session = new Session();
+        $panier = $session->get('panier');
+        return $this->render('caps/index.html.twig', [
+            'panier' => $panier
+        ]);
     }
     /**
      * @Route("/products", name="products")

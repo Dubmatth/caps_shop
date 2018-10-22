@@ -29,8 +29,6 @@ class BuyProductController extends AbstractController
                 $session->remove('panier');
             }
         }
-
-
         return $this->render('buy_product/buyProduct.html.twig');
     }
 
