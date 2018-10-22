@@ -29,6 +29,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fig/link-util" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mike182uk/cart" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />

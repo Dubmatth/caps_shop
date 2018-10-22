@@ -104,6 +104,12 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "knplabs/knp-components": {
+        "version": "v1.3.10"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v2.8.0"
+    },
     "mike182uk/cart": {
         "version": "v3.0.0"
     },
