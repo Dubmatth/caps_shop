@@ -9,8 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class CapsController extends AbstractController
+class CapsController extends Controller
 {
     /**
      * @Route("/", name="home")
@@ -23,14 +24,41 @@ class CapsController extends AbstractController
         ]);
     }
     /**
-     * @Route("/products", name="products")
+     * ("/products", name="products")
      */
-    public function showProducts(){
+    /*public function showProducts(){
         $products = $this->getDoctrine()
                         ->getRepository(Product::class)
                         ->findAll();
         return $this->render('caps/products.html.twig', ['products' => $products]);
+    }*/
+
+    /**
+     * @Route("/products", name="products")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showProducts(Request $request)
+    {
+        $cat = $request->query->get('category');
+        if (isset($cat)){
+            $product = $this->getDoctrine()->getRepository(Product::class)->findBy(['category' => $cat]);
+        } else {
+            $product = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        }
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $product, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            6/*limit per page*/
+        );
+
+        // parameters to template
+        return $this->render('caps/products.html.twig', array('pagination' => $pagination));
     }
+
+
+
     /**
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response

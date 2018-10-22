@@ -208,6 +208,9 @@ footer p {
     height: 450px;
     width: auto;
 }
+#block_caps .shadow-sm #cardTitle{
+    font-weight: bold;
+}
 #block_caps .shadow-sm .card-body{
     position: absolute;
     bottom: 0;
@@ -236,3 +239,6 @@ footer p {
     color: orange;
 }
 
+#paginationProducts{
+    margin: 3em auto;
+}
