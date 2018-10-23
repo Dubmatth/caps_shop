@@ -8,10 +8,10 @@
             <p class="lead text-muted">Headict est le shop de référence pour trouver votre casquette ! Que vous soyez snapback, 5 panel ou trucker, découvrez sur notre site une sélection de marques pointues et un choix incroyable de casquettes tendance !</p>
             <p>
                 {#FIXME Trier par catégories MAYBE AJAX#}
-                <a href="{{ path('products') }}" class="btn btn-primary my-2">All</a>
-                <a href="{{ path('products', {'category': 25}) }}" class="btn btn-secondary my-2">Curved</a>
-                <a href="{{ path('products', {'category': 26}) }}" class="btn btn-secondary my-2">Fitted</a>
-                <a href="{{ path('products', {'category': 27}) }}" class="btn btn-secondary my-2">Snapback</a>
+                <a href="{{ path('products') }}" class="btn btn-git s my-2" id="btnCatProd_1">All</a>
+                <a href="{{ path('products', {'category': 25}) }}" class="btn btn-secondary my-2" id="btnCatProd_2">Curved</a>
+                <a href="{{ path('products', {'category': 26}) }}" class="btn btn-secondary my-2" id="btnCatProd_3">Fitted</a>
+                <a href="{{ path('products', {'category': 27}) }}" class="btn btn-secondary my-2" id="btnCatProd_4">Snapback</a>
             </p>
         </div>
     </section>

@@ -57,10 +57,10 @@
                                             {% for product in app.session.get('panier').toArray()['items'] %}
                                             {% set totalProducts = totalProducts + product['data']['quantity'] %}
                                         {% endfor %}
-                                            <span class="badge badge-dark">{{ totalProducts }}</span>
+                                            <span class="badge">{{ totalProducts }}</span>
 
                                         {% else %}
-                                            <span class="badge badge-dark">0</span>
+                                            <span class="badge">0</span>
                                         {% endif %}
                                     </a>
                                 </li>

@@ -238,7 +238,11 @@ footer p {
 .navbar-nav .fas {
     color: orange;
 }
-
 #paginationProducts{
     margin: 3em auto;
+}
+
+/*Btn category Products*/
+.btnCatProd{
+    background-color: dodgerblue;
 }
