@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d98df07-8643-4f26-b1fd-946abf81937d" name="Default Changelist" comment="(" />
+    <list default="true" id="5d98df07-8643-4f26-b1fd-946abf81937d" name="Default Changelist" comment="(">
+      <change afterPath="$PROJECT_DIR$/templates/security/adminOrdersBalance.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdministrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdministrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BuyProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BuyProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/admin.html.twig" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +65,10 @@
     <session id="1101281130">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="4" />
-          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.21" value="1" />
@@ -70,9 +76,9 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="4" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.open.time.8" value="5" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -84,10 +90,10 @@
           <entry key="ico" value="1" />
           <entry key="jpeg" value="1" />
           <entry key="js" value="14" />
-          <entry key="php" value="72" />
+          <entry key="php" value="77" />
           <entry key="product" value="16" />
           <entry key="sql" value="1" />
-          <entry key="twig" value="90" />
+          <entry key="twig" value="94" />
           <entry key="user" value="16" />
           <entry key="yaml" value="15" />
         </counts>
@@ -99,10 +105,10 @@
           <entry key="Database Element" value="40" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="14" />
-          <entry key="PHP" value="72" />
+          <entry key="PHP" value="77" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="Twig" value="90" />
+          <entry key="Twig" value="94" />
           <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
@@ -112,8 +118,8 @@
           <entry key="css" value="1739" />
           <entry key="env" value="9" />
           <entry key="js" value="2838" />
-          <entry key="php" value="23412" />
-          <entry key="twig" value="15685" />
+          <entry key="php" value="23716" />
+          <entry key="twig" value="15924" />
           <entry key="txt" value="20" />
           <entry key="yaml" value="65" />
         </counts>
@@ -123,131 +129,17 @@
           <entry key=".env file" value="9" />
           <entry key="CSS" value="1742" />
           <entry key="JavaScript" value="2836" />
-          <entry key="PHP" value="23412" />
+          <entry key="PHP" value="23716" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="Scratch" value="246" />
-          <entry key="Twig" value="15684" />
+          <entry key="Twig" value="15923" />
           <entry key="YAML" value="65" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CapsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1015">
-              <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
-              <folding>
-                <element signature="e#34#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/caps/products.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2291">
-              <caret line="246" column="33" selection-start-line="246" selection-start-column="33" selection-end-line="246" selection-end-column="33" />
-              <folding>
-                <element signature="e#16#50#0" />
-                <element signature="e#64#113#0" />
-                <element signature="e#122#174#0" />
-                <element signature="e#188#211#0" />
-                <element signature="e#222#247#0" />
-                <element signature="e#264#294#0" />
-                <element signature="e#313#358#0" />
-                <element signature="e#383#423#0" />
-                <element signature="e#444#492#0" />
-                <element signature="e#504#524#0" />
-                <element signature="e#536#701#0" />
-                <element signature="e#717#741#0" />
-                <element signature="e#754#802#0" />
-                <element signature="e#822#858#0" />
-                <element signature="e#879#930#0" />
-                <element signature="e#957#988#0" />
-                <element signature="e#1009#1076#0" />
-                <element signature="e#1103#1134#0" />
-                <element signature="e#1166#1186#0" />
-                <element signature="e#1212#1269#0" />
-                <element signature="e#1290#1455#0" />
-                <element signature="e#1475#1497#0" />
-                <element signature="e#1515#1538#0" />
-                <element signature="e#1602#1623#0" />
-                <element signature="e#1644#1766#0" />
-                <element signature="e#1786#1877#0" />
-                <element signature="e#1895#1917#0" />
-                <element signature="e#1956#1979#0" />
-                <element signature="e#2018#2041#0" />
-                <element signature="e#2080#2103#0" />
-                <element signature="e#2142#2165#0" />
-                <element signature="e#2204#2227#0" />
-                <element signature="e#2266#2289#0" />
-                <element signature="e#2315#2431#0" />
-                <element signature="e#2450#2472#0" />
-                <element signature="e#2488#2536#0" />
-                <element signature="e#2558#2579#0" />
-                <element signature="e#2613#2647#0" />
-                <element signature="e#2665#2685#0" />
-                <element signature="e#2704#2728#0" />
-                <element signature="e#2746#2770#0" />
-                <element signature="e#2776#2799#0" />
-                <element signature="e#2806#2830#0" />
-                <element signature="e#2839#2863#0" />
-                <element signature="e#2872#2896#0" />
-                <element signature="e#2913#2936#0" />
-                <element signature="e#2979#3015#0" />
-                <element signature="e#3027#3173#0" />
-                <element signature="e#3174#3347#0" />
-                <element signature="e#3217#3345#0" />
-                <element signature="e#3372#3397#0" />
-                <element signature="e#3417#3442#0" />
-                <element signature="e#3465#3490#0" />
-                <element signature="e#3500#3530#0" />
-                <element signature="e#3568#3593#0" />
-                <element signature="e#3611#3636#0" />
-                <element signature="e#3659#3698#0" />
-                <element signature="e#3732#3758#0" />
-                <element signature="e#3792#3851#0" />
-                <element signature="e#3869#3914#0" />
-                <element signature="e#3961#3982#0" />
-                <element signature="e#4004#4038#0" />
-                <element signature="e#4085#4107#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -286,8 +178,6 @@
         <option value="$PROJECT_DIR$/templates/security/adminProductsEdit.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/AdminEditUserType.php" />
         <option value="$PROJECT_DIR$/templates/security/adminUserEdit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/AdministrationController.php" />
-        <option value="$PROJECT_DIR$/templates/security/admin.html.twig" />
         <option value="$PROJECT_DIR$/templates/security/adminUser.html.twig" />
         <option value="$PROJECT_DIR$/templates/security/dashboard.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/ProductType.php" />
@@ -299,7 +189,6 @@
         <option value="$PROJECT_DIR$/templates/caps/details.html.twig" />
         <option value="$PROJECT_DIR$/templates/caps/index.html.twig" />
         <option value="$PROJECT_DIR$/vendor/mike182uk/cart/src/CartItem.php" />
-        <option value="$PROJECT_DIR$/src/Controller/BuyProductController.php" />
         <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/templates/buy_product/buyProduct.html.twig" />
         <option value="$PROJECT_DIR$/templates/security/payments.html.twig" />
@@ -311,6 +200,10 @@
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/templates/caps/products.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/BuyProductController.php" />
+        <option value="$PROJECT_DIR$/templates/security/admin.html.twig" />
+        <option value="$PROJECT_DIR$/templates/security/adminOrdersBalance.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/AdministrationController.php" />
       </list>
     </option>
   </component>
@@ -452,39 +345,6 @@
               <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -499,6 +359,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
@@ -555,18 +416,20 @@
       <workItem from="1540056805854" duration="27780000" />
       <workItem from="1540140495697" duration="13949000" />
       <workItem from="1540277982097" duration="364000" />
-      <workItem from="1540287184024" duration="335000" />
+      <workItem from="1540287184024" duration="511000" />
+      <workItem from="1540292038677" duration="1673000" />
+      <workItem from="1540311127078" duration="314000" />
+      <workItem from="1540469333096" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168910000" />
+    <option name="totallyTimeSpent" value="171092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11172161" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.115384616" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -580,8 +443,8 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.3293944" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4945055" visible="true" weight="0.20643154" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50549453" side_tool="true" weight="0.44190872" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.493895" visible="true" weight="0.27904564" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.506105" side_tool="true" weight="0.27904564" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.3293944" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -623,7 +486,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/BuyProductController.php</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -674,20 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/security/admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/security/adminUser.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="32" column="86" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -757,30 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/caps/addProduct.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdministrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-959">
-          <caret line="57" column="14" selection-start-line="55" selection-start-column="12" selection-end-line="57" selection-end-column="14" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -809,26 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/BuyProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="88" column="52" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/buy_product/buyProduct.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1305">
@@ -847,9 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="757">
           <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding>
-            <element signature="e#23#82#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,16 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CapsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1015">
-          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/caps/products.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
@@ -909,78 +701,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2291">
           <caret line="246" column="33" selection-start-line="246" selection-start-column="33" selection-end-line="246" selection-end-column="33" />
-          <folding>
-            <element signature="e#16#50#0" />
-            <element signature="e#64#113#0" />
-            <element signature="e#122#174#0" />
-            <element signature="e#188#211#0" />
-            <element signature="e#222#247#0" />
-            <element signature="e#264#294#0" />
-            <element signature="e#313#358#0" />
-            <element signature="e#383#423#0" />
-            <element signature="e#444#492#0" />
-            <element signature="e#504#524#0" />
-            <element signature="e#536#701#0" />
-            <element signature="e#717#741#0" />
-            <element signature="e#754#802#0" />
-            <element signature="e#822#858#0" />
-            <element signature="e#879#930#0" />
-            <element signature="e#957#988#0" />
-            <element signature="e#1009#1076#0" />
-            <element signature="e#1103#1134#0" />
-            <element signature="e#1166#1186#0" />
-            <element signature="e#1212#1269#0" />
-            <element signature="e#1290#1455#0" />
-            <element signature="e#1475#1497#0" />
-            <element signature="e#1515#1538#0" />
-            <element signature="e#1602#1623#0" />
-            <element signature="e#1644#1766#0" />
-            <element signature="e#1786#1877#0" />
-            <element signature="e#1895#1917#0" />
-            <element signature="e#1956#1979#0" />
-            <element signature="e#2018#2041#0" />
-            <element signature="e#2080#2103#0" />
-            <element signature="e#2142#2165#0" />
-            <element signature="e#2204#2227#0" />
-            <element signature="e#2266#2289#0" />
-            <element signature="e#2315#2431#0" />
-            <element signature="e#2450#2472#0" />
-            <element signature="e#2488#2536#0" />
-            <element signature="e#2558#2579#0" />
-            <element signature="e#2613#2647#0" />
-            <element signature="e#2665#2685#0" />
-            <element signature="e#2704#2728#0" />
-            <element signature="e#2746#2770#0" />
-            <element signature="e#2776#2799#0" />
-            <element signature="e#2806#2830#0" />
-            <element signature="e#2839#2863#0" />
-            <element signature="e#2872#2896#0" />
-            <element signature="e#2913#2936#0" />
-            <element signature="e#2979#3015#0" />
-            <element signature="e#3027#3173#0" />
-            <element signature="e#3174#3347#0" />
-            <element signature="e#3217#3345#0" />
-            <element signature="e#3372#3397#0" />
-            <element signature="e#3417#3442#0" />
-            <element signature="e#3465#3490#0" />
-            <element signature="e#3500#3530#0" />
-            <element signature="e#3568#3593#0" />
-            <element signature="e#3611#3636#0" />
-            <element signature="e#3659#3698#0" />
-            <element signature="e#3732#3758#0" />
-            <element signature="e#3792#3851#0" />
-            <element signature="e#3869#3914#0" />
-            <element signature="e#3961#3982#0" />
-            <element signature="e#4004#4038#0" />
-            <element signature="e#4085#4107#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
+        <state relative-caret-position="414">
           <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CapsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="822">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/BuyProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="113" column="5" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+          <folding>
+            <element signature="e#34#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2900">
+          <caret line="100" column="5" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdministrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4089">
+          <caret line="149" column="82" selection-start-line="149" selection-start-column="82" selection-end-line="149" selection-end-column="82" />
+          <folding>
+            <element signature="e#34#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/security/adminUser.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="32" column="86" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/security/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/security/adminOrdersBalance.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/caps/addProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="10" selection-start-line="2" selection-start-column="4" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
         </state>
       </provider>
     </entry>

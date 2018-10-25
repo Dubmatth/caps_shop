@@ -1,0 +1,8 @@
+{% extends 'security/admin.html.twig' %}
+{% block adminContent %}
+<h1>Le total de vos paiements</h1>
+    {#{% for balance in ordersBalance %}
+        <p>{{ dump(balance['data']) }}</p>
+    {% endfor %}#}
+    {{ dump(ordersBalance) }}
+{% endblock %}

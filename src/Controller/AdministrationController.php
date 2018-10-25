@@ -140,5 +140,16 @@ class AdministrationController extends AbstractController
         return $this->redirectToRoute('adminUser');
     }
 
+    /**
+     * @Route("/ordersBalance", name="adminOrdersBalance")
+     */
+    public function totalBalance(){
+        \Stripe\Stripe::setApiKey("sk_test_nZ9Y47e2xHwD5iAlmAen1Pmz");
+
+        return $this->render('security/adminOrdersBalance.html.twig', [
+            'ordersBalance' => \Stripe\BalanceTransaction::all(array("limit" => 10))
+        ]);
+    }
+
 
 }
