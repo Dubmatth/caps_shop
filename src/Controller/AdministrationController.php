@@ -135,7 +135,7 @@ class AdministrationController extends AbstractController
     }
 
     /**
-     * @Route("/ordersBalance", name="adminOrdersBalance")
+     * @Route("/admin/ordersBalance", name="adminOrdersBalance")
      */
     public function totalBalance(){
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -147,7 +147,7 @@ class AdministrationController extends AbstractController
     }
 
     /**
-     * @Route("/currentMonth", name="currentMonth")
+     * @Route("/admin/currentMonth", name="currentMonth")
      */
     public function currentMonth(){
         /*FIXME Renvoie sur /login quand on essaie d'accéder sans etre log*/

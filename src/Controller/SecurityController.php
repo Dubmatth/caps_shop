@@ -52,7 +52,7 @@ class SecurityController extends AbstractController
      * @Route("/login", name="login")
      */
     public function login(){
-        return $this->render('caps/index.html.twig');
+        return $this->render('caps/login.html.twig');
     }
     /**
      * @Route("/logout", name="logout")
@@ -68,7 +68,7 @@ class SecurityController extends AbstractController
      * @Route("/paiement", name="payments")
      */
     public function payment(){
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
+        $this->denyAccessUnlessGranted('ROLE_USER', 'ROLE_ADMIN');
         return $this->render('security/payments.html.twig');
     }
 
