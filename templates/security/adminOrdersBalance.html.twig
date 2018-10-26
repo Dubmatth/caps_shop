@@ -1,8 +1,30 @@
 {% extends 'security/admin.html.twig' %}
 {% block adminContent %}
-<h1>Le total de vos paiements</h1>
-    {#{% for balance in ordersBalance %}
-        <p>{{ dump(balance['data']) }}</p>
-    {% endfor %}#}
-    {{ dump(ordersBalance) }}
+    <div class="container mt-5">
+        <h1>Voici les {{ ordersBalance['data']|length }} dernières commandes passées</h1>
+        <div class="table-responsive mt-5">
+            <table class="table table-striped table-sm" style="text-align: right;">
+                <thead>
+                <tr>
+                    <th>Commande</th>
+                    <th>Montant</th>
+                    <th>Date d'achat</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in ordersBalance['data'] %}
+                    {% if data['amount'] > 0 %} {# Il me sort 2 amount négatif #}
+                        <tr>
+                            <td>{{ data['id'] }}</td>
+                            <td>{{ (data['amount'] / 100) }} €</td>
+                            <td>{{ data['created']|date("m/d/Y") }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {#{{ dump(ordersBalance['data']) }}#}
+
 {% endblock %}

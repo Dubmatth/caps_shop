@@ -39,19 +39,19 @@ class SecurityController extends AbstractController
         }
         return $this->render('security/registration.html.twig', ['form' => $form->createView()]);
     }
+
+
     /**
      * @Route("/admin", name="admin")
      */
     public function admin(){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('security/admin.html.twig');
     }
     /**
      * @Route("/login", name="login")
      */
     public function login(){
-            $this->addFlash(
-                'danger', 'Le nom d\'utilisateur ou le mot de passe sont incorrect !'
-            );
         return $this->render('caps/index.html.twig');
     }
     /**
@@ -68,6 +68,7 @@ class SecurityController extends AbstractController
      * @Route("/paiement", name="payments")
      */
     public function payment(){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
         return $this->render('security/payments.html.twig');
     }
 
@@ -77,24 +78,31 @@ class SecurityController extends AbstractController
      * @Route("/paiement-verifie", name="verifiedPayment")
      */
     public function verifiedPayment(Request $request){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
         $session = new Session();
-        $panierTotal = $session->get('panier')->total() * 100;
+        $panier = $session->get('panier');
+        if (!empty($panier)){
+            $panierTotal = $session->get('panier')->total() * 100;
 
+            // Set your secret key: remember to change this to your live secret key in production
+            // See your keys here: https://dashboard.stripe.com/account/apikeys
+            \Stripe\Stripe::setApiKey("sk_test_nZ9Y47e2xHwD5iAlmAen1Pmz");
+            // Token is created using Checkout or Elements!
+            // Get the payment token ID submitted by the form:
+            $token = $request->request->get('stripeToken');
+            $charge = \Stripe\Charge::create([
+                'amount' => $panierTotal,
+                'currency' => 'eur',
+                'description' => 'Example charge',
+                'source' => $token,
+            ]);
+            $session->remove('panier');
+            $this->addFlash('success', 'Merci, le paiement à bien été effectué, vous recevrez un email de confirmation dans les prochaines minutes ... ');
 
-        // Set your secret key: remember to change this to your live secret key in production
-        // See your keys here: https://dashboard.stripe.com/account/apikeys
-        \Stripe\Stripe::setApiKey("sk_test_nZ9Y47e2xHwD5iAlmAen1Pmz");
-        // Token is created using Checkout or Elements!
-        // Get the payment token ID submitted by the form:
-        $token = $request->request->get('stripeToken');
-        $charge = \Stripe\Charge::create([
-            'amount' => $panierTotal,
-            'currency' => 'eur',
-            'description' => 'Example charge',
-            'source' => $token,
-        ]);
-        $session->remove('panier');
-        $this->addFlash('success', 'Merci, le paiement à bien été effectué, vous recevrez un email de confirmation dans les prochaines minutes ... ');
+        } else {
+            $this->addFlash('danger', 'Aucun panier à valider');
+
+        }
 
         return $this->render('buy_product/buyProduct.html.twig');
 

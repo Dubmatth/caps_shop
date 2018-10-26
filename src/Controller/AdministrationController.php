@@ -15,24 +15,17 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AdministrationController extends AbstractController
 {
     /**
-     * @Route("/administration", name="administration")
-     */
-    public function index()
-    {
-        return $this->render('administration/index.html.twig', [
-            'controller_name' => 'AdministrationController',
-        ]);
-    }
-    /**
      * @Route("/admin/dashboard", name="dashboard")
      */
     public function dashboard(){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('security/dashboard.html.twig');
     }
     /**
      * @Route("/admin/products", name="adminProduct")
      */
     public function adminProducts(){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $products = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findAll();
@@ -86,6 +79,7 @@ class AdministrationController extends AbstractController
      * @Route("/admin/users", name="adminUser")
      */
     public function adminUser(){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $users = $this->getDoctrine()
                     ->getRepository(User::class)
                     ->findAll();
@@ -144,10 +138,26 @@ class AdministrationController extends AbstractController
      * @Route("/ordersBalance", name="adminOrdersBalance")
      */
     public function totalBalance(){
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         \Stripe\Stripe::setApiKey("sk_test_nZ9Y47e2xHwD5iAlmAen1Pmz");
 
         return $this->render('security/adminOrdersBalance.html.twig', [
-            'ordersBalance' => \Stripe\BalanceTransaction::all(array("limit" => 10))
+            'ordersBalance' => \Stripe\Charge::all(array("limit" => 100))
+        ]);
+    }
+
+    /**
+     * @Route("/currentMonth", name="currentMonth")
+     */
+    public function currentMonth(){
+        /*FIXME Renvoie sur /login quand on essaie d'accéder sans etre log*/
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $date = new \DateTime();
+        $date = $date->getTimestamp();
+
+        \Stripe\Stripe::setApiKey("sk_test_nZ9Y47e2xHwD5iAlmAen1Pmz");
+        return $this->render('security/currentMonth.html.twig', [
+            'currentMonth' => \Stripe\Charge::all(array("limit" => 100, 'created[lt]' => $date))
         ]);
     }
 
