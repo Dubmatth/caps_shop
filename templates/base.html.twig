@@ -73,7 +73,21 @@
                             <!-- Button trigger modal -->
                             <ul class="navbar-nav" id="navbar_right">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user fa-2x"></i></a>
+                                    <a class="nav-link" href="{{ path('panier') }}">
+                                        <i class="fas fa-shopping-cart"></i> Panier
+                                        {% if app.session.get('panier') is not empty %}
+                                            {% set totalProducts = 0 %}
+                                            {% for product in app.session.get('panier').toArray()['items'] %}
+                                                {% set totalProducts = totalProducts + product['data']['quantity'] %}
+                                            {% endfor %}
+                                            <span class="badge">{{ totalProducts }}</span>
+                                        {% else %}
+                                            <span class="badge">0</span>
+                                        {% endif %}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="fas fa-user"></i></a>
                                 </li>
                             </ul>
                             <!-- Modal -->

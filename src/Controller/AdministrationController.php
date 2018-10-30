@@ -150,7 +150,6 @@ class AdministrationController extends AbstractController
      * @Route("/admin/currentMonth", name="currentMonth")
      */
     public function currentMonth(){
-        /*FIXME Renvoie sur /login quand on essaie d'accéder sans etre log*/
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $date = new \DateTime();
         $date = $date->getTimestamp();
