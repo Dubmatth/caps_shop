@@ -68,7 +68,7 @@ class SecurityController extends AbstractController
      * @Route("/paiement", name="payments")
      */
     public function payment(){
-        $this->denyAccessUnlessGranted('ROLE_USER', 'ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
         return $this->render('security/payments.html.twig');
     }
 

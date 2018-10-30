@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <div class="container">
-        <form class="form-signin" action="{{ 'login' }}" method="post">
+        <form class="form-signin col-md-8 offset-2" action="{{ 'login' }}" method="post">
             <img class="mb-4 mt-4 text-right" src="{{ asset('img/logo_headict.svg') }}" alt="logo headict" width="72" height="72" style="background-color: black;border-radius: 50%">
             <h1 class="h3 mb-3">Déjà inscrit ?</h1>
             <label for="inputEmail" class="sr-only">Adresse E-mail</label>
@@ -14,7 +14,11 @@
                 </label>
             </div>#}
             <button class="btn btn-lg btn-primary btn-block col-md-8 offset-2" type="submit">Connexion</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+            <div class="" id="">
+                <h3 class="">Pas encore inscrit ?</h3>
+                <a href="{{ path('registration') }}" class="btn btn-primary">Inscription</a>
+            </div>
+            <p class="mt-5 mb-3 text-muted">Headict &copy; 2018-2019</p>
         </form>
     </div>
 
