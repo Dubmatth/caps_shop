@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class SecurityController extends AbstractController
 {
@@ -66,9 +67,9 @@ class SecurityController extends AbstractController
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/paiement", name="payments")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_USER')")
      */
     public function payment(){
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
         return $this->render('security/payments.html.twig');
     }
 
@@ -76,9 +77,9 @@ class SecurityController extends AbstractController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/paiement-verifie", name="verifiedPayment")
+     * @Security("has_role('ROLE_ADMIN') or has_role('ROLE_USER')")
      */
     public function verifiedPayment(Request $request){
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', 'ROLE_USER');
         $session = new Session();
         $panier = $session->get('panier');
         if (!empty($panier)){

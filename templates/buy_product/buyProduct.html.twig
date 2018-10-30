@@ -41,7 +41,6 @@
     </main>
         <div class="container">
             <div class="text-left">
-                {{ dump(app.user) }}
                 {% if app.session.get('panier') is not empty %}
                 <a href="{{ path('products') }}" class="btn btn-success">Continuer vos achats</a>
                     {% if app.user %}
