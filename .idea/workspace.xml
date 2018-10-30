@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="5d98df07-8643-4f26-b1fd-946abf81937d" name="Default Changelist" comment="(">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="5d98df07-8643-4f26-b1fd-946abf81937d" name="Default Changelist" comment="(" />
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +44,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="caps_shop: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="caps_shop@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="caps_shop: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="user: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -79,12 +76,12 @@
           <entry key="ico" value="1" />
           <entry key="jpeg" value="1" />
           <entry key="js" value="14" />
-          <entry key="php" value="106" />
+          <entry key="php" value="107" />
           <entry key="product" value="16" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="1" />
           <entry key="twig" value="116" />
-          <entry key="user" value="21" />
+          <entry key="user" value="22" />
           <entry key="yaml" value="20" />
         </counts>
       </usages-collector>
@@ -92,10 +89,10 @@
         <counts>
           <entry key=".env file" value="6" />
           <entry key="CSS" value="26" />
-          <entry key="Database Element" value="45" />
+          <entry key="Database Element" value="46" />
           <entry key="Image" value="2" />
           <entry key="JavaScript" value="14" />
-          <entry key="PHP" value="106" />
+          <entry key="PHP" value="107" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="1" />
@@ -158,11 +155,16 @@
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file pinned="false" current-in-tab="true">
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
         <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="1645">
               <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
               <folding>
                 <element signature="e#34#57#0#PHP" expanded="true" />
@@ -171,11 +173,19 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/buy_product/buyProduct.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://1ae6da40-49f5-4f71-be18-d2b5f9adc2a6/schema/caps_shop/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
             </state>
           </provider>
         </entry>
@@ -401,6 +411,29 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="buy_product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="caps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="caps_shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="caps_shop" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -484,7 +517,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="189913000" />
+=======
+    <option name="totallyTimeSpent" value="189273000" />
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -496,10 +533,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15085287" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17481662" />
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -513,13 +553,17 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.3293944" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" visible="true" weight="0.29515418" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4914712" visible="true" weight="0.27858627" />
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50852877" side_tool="true" weight="0.29515418" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="13" weight="0.32848233" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.17298289" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.17298289" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.16381419" />
@@ -734,7 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://1ae6da40-49f5-4f71-be18-d2b5f9adc2a6/schema/caps_shop/table/user" />
     <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="783">
@@ -777,6 +820,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="das://1ae6da40-49f5-4f71-be18-d2b5f9adc2a6/schema/caps_shop/table/user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -874,6 +918,11 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+>>>>>>> cc89c867cca9518f33ae22c4df97206a1f8bd84b
     <entry file="file://$PROJECT_DIR$/templates/buy_product/buyProduct.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -916,6 +965,23 @@
           <folding>
             <element signature="e#34#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1645">
+          <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
+          <folding>
+            <element signature="e#34#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://1ae6da40-49f5-4f71-be18-d2b5f9adc2a6/schema/caps_shop/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
