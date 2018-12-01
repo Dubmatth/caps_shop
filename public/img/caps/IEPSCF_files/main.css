@@ -1,0 +1,22 @@
+header{
+    height: 200px;
+    background: url('../img/ban.jpeg') no-repeat center center;
+    background-size: cover;
+}
+main {
+    padding: 40px 0;
+}
+section {
+    min-height: 650px;
+}
+footer {
+    line-height: 40px;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+}
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
